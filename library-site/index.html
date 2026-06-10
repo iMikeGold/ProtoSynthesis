@@ -5,40 +5,94 @@
   <title>ProtoSynthesis Library</title>
 
   <style>
+    :root {
+      --bg: #05060a;
+      --fg: #e8e8e8;
+      --muted: #9aa0aa;
+      --accent: #7c5cff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Inter, system-ui, sans-serif;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background: #0b0b0f;
-      color: #ffffff;
+      background: radial-gradient(circle at top, #0b0d14 0%, var(--bg) 60%);
+      color: var(--fg);
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     h1 {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 40px;
     }
 
     .section {
-      margin-top: 30px;
+      margin-top: 35px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #ffffff;
     }
 
     .item {
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #333;
-      border-radius: 6px;
+      padding: 14px 16px;
+      margin: 10px 0;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.03);
+      transition: 0.2s ease;
+    }
+
+    .item:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 15px rgba(124,92,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    .item strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .item small {
+      color: var(--muted);
+      display: block;
     }
 
     .empty {
       opacity: 0.6;
       font-style: italic;
+      padding: 10px 0;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>ProtoSynthesis Library</h1>
+  <div class="container">
 
-  <div id="content"></div>
+    <h1>ProtoSynthesis Library</h1>
+    <div class="subtitle">Structured knowledge registry and content system</div>
+
+    <div id="content"></div>
+
+  </div>
 
   <script>
     async function loadRegistry() {
@@ -47,7 +101,6 @@
         const data = await res.json();
 
         const container = document.getElementById('content');
-
         const library = data.library.content;
 
         function renderSection(title, items) {
@@ -67,11 +120,13 @@
             items.forEach(item => {
               const div = document.createElement('div');
               div.className = 'item';
+
               div.innerHTML = `
-                <strong>${item.title}</strong><br/>
-                <small>${item.id}</small><br/>
+                <strong>${item.title}</strong>
+                <small>${item.id}</small>
                 <small>${item.path}</small>
               `;
+
               section.appendChild(div);
             });
           }
