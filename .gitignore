@@ -1,0 +1,83 @@
+# =========================
+# OS / System files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Build outputs (future-proof)
+# =========================
+dist/
+build/
+out/
+coverage/
+
+# =========================
+# Node / tooling (future-safe, even if not used yet)
+# =========================
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+.env.local
+.env.production
+.env.*.local
+
+# =========================
+# Temporary / draft files
+# =========================
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# =========================
+# Content drafts (optional control layer)
+# uncomment if you want draft isolation later
+# =========================
+# drafts/
+# *_draft.*
+
+# =========================
+# PDF / export clutter (optional, depends on workflow)
+# =========================
+*.pdf~
+*.docx~
+*.epub~
+
+# =========================
+# Cloudflare / deployment artifacts
+# =========================
+.wrangler/
+.functions/
+.pages/
+
+# =========================
+# IDE / editor files
+# =========================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# =========================
+# Archive / accidental dumps
+# =========================
+*.zip
+*.tar
+*.tar.gz
