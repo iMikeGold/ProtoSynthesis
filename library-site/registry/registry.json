@@ -1,0 +1,30 @@
+{
+  "library": {
+    "name": "ProtoSynthesis Library",
+    "version": "1.0",
+    "content": {
+      "books": [
+        {
+          "id": "book-001",
+          "title": "Untitled Book Example",
+          "path": "/content/books/book-001.html",
+          "status": "draft",
+          "visibility": "public",
+          "tags": ["foundation"]
+        }
+      ],
+      "ebooks": [],
+      "articles": [],
+      "whitepapers": [
+        {
+          "id": "paper-001",
+          "title": "System Architecture Whitepaper",
+          "path": "/content/whitepapers/paper-001.pdf",
+          "status": "draft",
+          "visibility": "public",
+          "tags": ["architecture", "systems"]
+        }
+      ]
+    }
+  }
+}
