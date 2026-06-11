@@ -35,8 +35,8 @@ body {
   max-width: 180px;
   height: auto;
   display: block;
-  margin: 0 auto 30px auto;
-  filter: drop-shadow(0 0 20px rgba(124, 92, 255, 0.35));
+  margin-bottom: 0 auto 30px auto;
+  filter: drop-shadow(0 0 20px rgba(124, 92, 255, 0.4));
   animation: float 6s ease-in-out infinite;
 }
 
