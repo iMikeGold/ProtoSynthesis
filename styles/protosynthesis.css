@@ -33,7 +33,7 @@ body {
 .logo {
   width: 180px;
   height: auto;
-  margin-bottom: 0 auto 30px auto;
+  margin-bottom: 30px;
   filter: drop-shadow(0 0 20px rgba(124, 92, 255, 0.4));
   animation: float 6s ease-in-out infinite;
 }
