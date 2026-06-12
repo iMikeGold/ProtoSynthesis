@@ -1,123 +1,101 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 <head>
+
   <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>ProtoSynthesis Library</title>
 
-  <style>
-    :root {
-      --bg: #05060a;
-      --fg: #e8e8e8;
-      --muted: #9aa0aa;
-      --accent: #7c5cff;
-    }
+  <!-- External Library Design System -->
+  <link rel="stylesheet" href="/styles/library.css">
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Inter, system-ui, sans-serif;
-    }
-
-    body {
-      background: radial-gradient(circle at top, #0b0d14 0%, var(--bg) 60%);
-      color: var(--fg);
-      min-height: 100vh;
-      padding: 60px 20px;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    h1 {
-      margin-bottom: 10px;
-      letter-spacing: 0.05em;
-    }
-
-    .subtitle {
-      color: var(--muted);
-      margin-bottom: 40px;
-    }
-
-    .section {
-      margin-top: 35px;
-    }
-
-    h2 {
-      margin-bottom: 15px;
-      color: #ffffff;
-    }
-
-    .item {
-      padding: 14px 16px;
-      margin: 10px 0;
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 10px;
-      background: rgba(255,255,255,0.03);
-      transition: 0.2s ease;
-    }
-
-    .item:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 15px rgba(124,92,255,0.2);
-      transform: translateY(-2px);
-    }
-
-    .item strong {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .item small {
-      color: var(--muted);
-      display: block;
-    }
-
-    .empty {
-      opacity: 0.6;
-      font-style: italic;
-      padding: 10px 0;
-    }
-  </style>
 </head>
 
 <body>
 
+  <div class="glow"></div>
+
   <div class="container">
 
-    <h1>ProtoSynthesis Library</h1>
-    <div class="subtitle">Structured knowledge registry and content system</div>
+    <!-- HEADER -->
+    <div class="center">
 
-    <div id="content"></div>
+      <!-- LOGO (UNCHANGED) -->
+      <img
+        class="logo"
+        src="/assets/images/ProtoSynthesis 7Dot Logo Only Main ProtoGlyph Design 2.2.png"
+        alt="ProtoSynthesis Logo"
+      >
+
+      <h1>ProtoSynthesis Library</h1>
+
+      <div class="subtitle">
+        Structured knowledge registry and content system
+      </div>
+
+      <!-- NAVIGATION (NEW BUT SAFE) -->
+      <div class="buttons">
+
+        <a class="btn" href="https://protosynthesis.co.uk">
+          Main Site
+        </a>
+
+        <a class="btn" href="https://protosynthesis.co.uk/architecture/architecture-overview.html">
+          Architecture
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+      <div id="content"></div>
+
+    </div>
 
   </div>
 
   <script>
+
     async function loadRegistry() {
+
       try {
+
         const res = await fetch('/registry/registry.json');
+
         const data = await res.json();
 
         const container = document.getElementById('content');
+
         const library = data.library.content;
 
         function renderSection(title, items) {
+
           const section = document.createElement('div');
           section.className = 'section';
 
           const h2 = document.createElement('h2');
           h2.textContent = title;
+
           section.appendChild(h2);
 
           if (!items || items.length === 0) {
+
             const empty = document.createElement('div');
             empty.className = 'empty';
             empty.textContent = 'No items yet...';
+
             section.appendChild(empty);
+
           } else {
+
             items.forEach(item => {
+
               const div = document.createElement('div');
               div.className = 'item';
 
@@ -128,10 +106,13 @@
               `;
 
               section.appendChild(div);
+
             });
+
           }
 
           container.appendChild(section);
+
         }
 
         renderSection('Books', library.books);
@@ -139,14 +120,24 @@
         renderSection('Articles', library.articles);
         renderSection('Whitepapers', library.whitepapers);
 
-      } catch (err) {
+      }
+
+      catch (err) {
+
         document.getElementById('content').innerHTML =
           '<p>Registry not found or failed to load.</p>';
+
       }
+
     }
 
     loadRegistry();
-  </script>
 
+  </script>
+<footer class="footer">
+  © ProtoSynthesis 2026–Present · Library Knowledge Registry · Living Knowledge System
+</footer>
+  
 </body>
+
 </html>
