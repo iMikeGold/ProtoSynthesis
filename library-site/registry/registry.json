@@ -26,7 +26,7 @@
         {
           "id": "ebook-001",
           "title": "Algorithm of Astrology: Celestial Source Code",
-          "path": "/content/ebooks/celestial-source-code-ebook-001.pdf",
+          "path": "/content/ebooks/celestial-source-code-ebook001.pdf",
           "status": "draft",
           "visibility": "public",
           "tags": ["architecture", "systems", "foundation"]
@@ -34,7 +34,7 @@
          {
           "id": "ebook-002",
           "title": "Algorithm of Astrology: The Visionary Guide",
-          "path": "/content/whitepapers/visionary-guide-ebook-002.pdf",
+          "path": "/content/whitepapers/visionary-guide-ebook002.pdf",
           "status": "draft",
           "visibility": "public",
           "tags": ["architecture", "systems", "protocol"]
@@ -45,7 +45,7 @@
         {
           "id": "article-001",
           "title": "Core Foundational Manifesto",
-          "path": "/content/articles/foundational-manifesto-001.pdf",
+          "path": "/content/articles/foundational-manifesto-article001.pdf",
           "status": "draft",
           "visibility": "public",
           "tags": ["manifesto", "foundation"]
@@ -56,7 +56,7 @@
         {
           "id": "paper-001",
           "title": "Neuro-Technical Symstems Synthesis Whitepaper",
-          "path": "/content/whitepapers/neuro-technicalsSystems-synthesis-whitepaper-paper001.pdf",
+          "path": "/content/whitepapers/neuro-technicalsSystems-synthesis-whitepaper001.pdf",
           "status": "draft",
           "visibility": "public",
           "tags": ["architecture", "systems", "protocol"]
@@ -64,7 +64,7 @@
         {
           "id": "paper-002",
           "title": "The ProtoSynthesis Whitepaper",
-          "path": "/content/whitepapers/protosynthesis-whitepaper-002.pdf",
+          "path": "/content/whitepapers/protosynthesis-whitepaper002.pdf",
           "status": "draft",
           "visibility": "public",
           "tags": ["architecture", "systems", "framework"]
