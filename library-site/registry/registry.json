@@ -26,10 +26,18 @@
         {
           "id": "ebook-001",
           "title": "Algorithm of Astrology: Celestial Source Code",
-          "path": "/content/ebooks/algorithm-of-astrology-001.pdf",
+          "path": "/content/ebooks/celestial-source-code-ebook-001.pdf",
           "status": "draft",
           "visibility": "public",
           "tags": ["architecture", "systems", "foundation"]
+        };
+         {
+          "id": "ebook-002",
+          "title": "Algorithm of Astrology: The Visionary Guide",
+          "path": "/content/whitepapers/visionary-guide-ebook-002.pdf",
+          "status": "draft",
+          "visibility": "public",
+          "tags": ["architecture", "systems", "protocol"]
         }
       ],
 
@@ -47,19 +55,19 @@
       "whitepapers": [
         {
           "id": "paper-001",
-          "title": "The ProtoSynthesis Whitepaper",
-          "path": "/content/whitepapers/protosynthesis-whitepaper-001.pdf",
-          "status": "draft",
-          "visibility": "public",
-          "tags": ["architecture", "systems", "framework"]
-        },
-        {
-          "id": "paper-002",
-          "title": "The Visionary Guide Whitepaper",
-          "path": "/content/whitepapers/visionary-guide-whitepaper-002.pdf",
+          "title": "Neuro-Technical Symstems Synthesis Whitepaper",
+          "path": "/content/whitepapers/neuro-technicalsSystems-synthesis-whitepaper-paper001.pdf",
           "status": "draft",
           "visibility": "public",
           "tags": ["architecture", "systems", "protocol"]
+        },
+        {
+          "id": "paper-002",
+          "title": "The ProtoSynthesis Whitepaper",
+          "path": "/content/whitepapers/protosynthesis-whitepaper-002.pdf",
+          "status": "draft",
+          "visibility": "public",
+          "tags": ["architecture", "systems", "framework"]
         }
       ]
     }
