@@ -6,8 +6,8 @@
       "books": [
         {
           "id": "book-001",
-          "title": "Algorithm of Astrology",
-          "path": "/content/books/algorithm-of-astrology.html",
+          "title": "Algorithm of Everything",
+          "path": "/content/books/algorithm-of-everything.html",
           "status": "draft",
           "visibility": "public",
           "tags": ["foundation"]
@@ -16,22 +16,22 @@
       "ebooks": [
          {
           "id": "ebook-001",
-          "title": "Algorithm of Everything",
-          "path": "/content/ebok/algorithm-of-everything.pdf",
+          "title": "Algorithm of Astrology: Celestial Source Code",
+          "path": "/content/ebok/algorithm-of-astrology-001.pdf",
           "status": "draft",
           "visibility": "public",
-          "tags": ["architecture", "systems", "foundatoin"]
+          "tags": ["architecture", "systems", "foundation"]
         }
       ],
       "articles": [],
       "whitepapers": [
         {
           "id": "paper-001",
-          "title": "System Architecture Whitepaper",
-          "path": "/content/whitepapers/paper-001.pdf",
+          "title": "ProtoSynthesis Whitepaper",
+          "path": "/content/whitepapers/protosynthesis-whitepaper-001.pdf",
           "status": "draft",
           "visibility": "public",
-          "tags": ["architecture", "systems"]
+          "tags": ["architecture", "systems", "framework"]
         }
       ]
     }
