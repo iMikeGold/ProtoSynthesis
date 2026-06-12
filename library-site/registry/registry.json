@@ -11,7 +11,8 @@
           "status": "draft",
           "visibility": "public",
           "tags": ["foundation"]
-          
+        }
+        {
            "id": "book-002",
           "title": "Algorithm of Astrology",
           "path": "/content/books/algorithm-of-everything.html",
@@ -48,7 +49,8 @@
           "status": "draft",
           "visibility": "public",
           "tags": ["architecture", "systems", "framework"]
-          
+        }
+        {
           "id": "paper-002",
           "title": "Celestial Source Code Whitepaper",
           "path": "/content/whitepapers/celestial-source-code-whitepaper-002.pdf",
