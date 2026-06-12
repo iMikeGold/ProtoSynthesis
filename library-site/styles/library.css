@@ -338,7 +338,7 @@ p {
 
   border-color: var(--border-hover);
   box-shadow: 0 0 20px rgba(53,214,255,0.25);
-}
+
   background: var(--surface-hover);
 
   box-shadow: var(--shadow-glow);
