@@ -1,19 +1,28 @@
 {
   "library": {
     "name": "ProtoSynthesis Library",
-    "version": "1.0",
+    "version": "1.1",
     "content": {
       "books": [
         {
           "id": "book-001",
-          "title": "Untitled Book Example",
-          "path": "/content/books/book-001.html",
+          "title": "Algorithm of Astrology",
+          "path": "/content/books/algorithm-of-astrology.html",
           "status": "draft",
           "visibility": "public",
           "tags": ["foundation"]
         }
       ],
-      "ebooks": [],
+      "ebooks": [
+         {
+          "id": "ebook-001",
+          "title": "Algorithm of Everything",
+          "path": "/content/ebok/algorithm-of-everything.pdf",
+          "status": "draft",
+          "visibility": "public",
+          "tags": ["architecture", "systems", "foundatoin"]
+        }
+      ],
       "articles": [],
       "whitepapers": [
         {
