@@ -1,12 +1,19 @@
 {
   "library": {
     "name": "ProtoSynthesis Library",
-    "version": "1.1",
+    "version": "1.2",
     "content": {
       "books": [
         {
           "id": "book-001",
           "title": "Algorithm of Everything",
+          "path": "/content/books/algorithm-of-everything.html",
+          "status": "draft",
+          "visibility": "public",
+          "tags": ["foundation"]
+          
+           "id": "book-002",
+          "title": "Algorithm of Astrology",
           "path": "/content/books/algorithm-of-everything.html",
           "status": "draft",
           "visibility": "public",
@@ -23,7 +30,16 @@
           "tags": ["architecture", "systems", "foundation"]
         }
       ],
-      "articles": [],
+      "articles": [
+           {
+          "id": "article-001",
+          "title": "Foundational Manifesto",
+          "path": "/content/articles/foundational-manifesto-001.pdf",
+          "status": "draft",
+          "visibility": "public",
+          "tags": ["manifesto", "foundation"]
+       }
+      ],
       "whitepapers": [
         {
           "id": "paper-001",
@@ -32,6 +48,13 @@
           "status": "draft",
           "visibility": "public",
           "tags": ["architecture", "systems", "framework"]
+          
+          "id": "paper-002",
+          "title": "Celestial Source Code Whitepaper",
+          "path": "/content/whitepapers/celestial-source-code-whitepaper-002.pdf",
+          "status": "draft",
+          "visibility": "public",
+          "tags": ["architecture", "systems", "protocol"]
         }
       ]
     }
