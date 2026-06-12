@@ -73,12 +73,19 @@ body {
     BlinkMacSystemFont,
     sans-serif;
 
-  background:
-    radial-gradient(
-      circle at top,
-      #0d1320 0%,
-      var(--bg) 65%
-    );
+ background:
+
+  radial-gradient(
+    circle at top left,
+    rgba(53,214,255,0.10),
+    transparent 45%
+  ),
+
+  radial-gradient(
+    circle at top,
+    #0d1320 0%,
+    var(--bg) 65%
+  );
 
   color: var(--fg);
 
