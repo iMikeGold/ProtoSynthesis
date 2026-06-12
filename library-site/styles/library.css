@@ -339,11 +339,33 @@ p {
 .section {
 
   margin-top: 40px;
+
+  position: relative;
 }
 
 .section-header {
 
   margin-bottom: 15px;
+}
+
+.section::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: -10px;
+
+  width: 120px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(53,214,255,0.45),
+      transparent
+    );
 }
 
 /* =====================================
