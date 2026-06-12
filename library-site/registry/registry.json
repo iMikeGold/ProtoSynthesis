@@ -19,6 +19,14 @@
           "status": "draft",
           "visibility": "public",
           "tags": ["foundation"]
+        },
+        {
+          "id": "book-003",
+          "title": "Algorithm of Attraction",
+          "path": "/content/books/algorithm-of-attraction-book003.html",
+          "status": "draft",
+          "visibility": "public",
+          "tags": ["foundation", "logic", "system"]
         }
       ],
 
