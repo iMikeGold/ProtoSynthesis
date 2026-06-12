@@ -7,7 +7,7 @@
         {
           "id": "book-001",
           "title": "Algorithm of Everything",
-          "path": "/content/books/algorithm-of-everything.html",
+          "path": "/content/books/algorithm-of-everything-book001.html",
           "status": "draft",
           "visibility": "public",
           "tags": ["foundation"]
@@ -15,7 +15,7 @@
         {
           "id": "book-002",
           "title": "Algorithm of Astrology",
-          "path": "/content/books/algorithm-of-astrology.html",
+          "path": "/content/books/algorithm-of-astrology-book002.html",
           "status": "draft",
           "visibility": "public",
           "tags": ["foundation"]
