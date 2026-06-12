@@ -1,7 +1,7 @@
 {
   "library": {
     "name": "ProtoSynthesis Library",
-    "version": "1.2",
+    "version": "1.3",
     "content": {
       "books": [
         {
@@ -11,36 +11,39 @@
           "status": "draft",
           "visibility": "public",
           "tags": ["foundation"]
-        }
+        },
         {
-           "id": "book-002",
+          "id": "book-002",
           "title": "Algorithm of Astrology",
-          "path": "/content/books/algorithm-of-everything.html",
+          "path": "/content/books/algorithm-of-astrology.html",
           "status": "draft",
           "visibility": "public",
           "tags": ["foundation"]
         }
       ],
+
       "ebooks": [
-         {
+        {
           "id": "ebook-001",
           "title": "Algorithm of Astrology: Celestial Source Code",
-          "path": "/content/ebok/algorithm-of-astrology-001.pdf",
+          "path": "/content/ebooks/algorithm-of-astrology-001.pdf",
           "status": "draft",
           "visibility": "public",
           "tags": ["architecture", "systems", "foundation"]
         }
       ],
+
       "articles": [
-           {
+        {
           "id": "article-001",
           "title": "Foundational Manifesto",
           "path": "/content/articles/foundational-manifesto-001.pdf",
           "status": "draft",
           "visibility": "public",
           "tags": ["manifesto", "foundation"]
-       }
+        }
       ],
+
       "whitepapers": [
         {
           "id": "paper-001",
@@ -49,7 +52,7 @@
           "status": "draft",
           "visibility": "public",
           "tags": ["architecture", "systems", "framework"]
-        }
+        },
         {
           "id": "paper-002",
           "title": "Celestial Source Code Whitepaper",
