@@ -55,8 +55,8 @@
         },
         {
           "id": "paper-002",
-          "title": "The Celestial Source Code Whitepaper",
-          "path": "/content/whitepapers/celestial-source-code-whitepaper-002.pdf",
+          "title": "The Visionary Guide Whitepaper",
+          "path": "/content/whitepapers/visionary-guide-whitepaper-002.pdf",
           "status": "draft",
           "visibility": "public",
           "tags": ["architecture", "systems", "protocol"]
