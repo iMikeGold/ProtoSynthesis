@@ -1,12 +1,29 @@
+# =========================================================
+# PROTOSYNTHESIS CANONICAL .GITIGNORE v1
+# System: ProtoSynthesis
+# Purpose: Engineering hygiene + security + IP boundary
+# =========================================================
+
+
 # =========================
-# OS / System files
+# 1. SYSTEM / OS ARTIFACTS
 # =========================
 .DS_Store
 Thumbs.db
 desktop.ini
 
+
 # =========================
-# Logs
+# 2. EDITOR / IDE FILES
+# =========================
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+
+# =========================
+# 3. LOGS & DEBUG OUTPUT
 # =========================
 *.log
 logs/
@@ -14,70 +31,72 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+
 # =========================
-# Build outputs (future-proof)
+# 4. BUILD / RUNTIME OUTPUTS
 # =========================
 dist/
 build/
 out/
 coverage/
 
+
 # =========================
-# Node / tooling (future-safe, even if not used yet)
+# 5. DEPENDENCIES / TOOLING
 # =========================
 node_modules/
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
-# =========================
-# Environment / secrets
-# =========================
-.env
-.env.local
-.env.production
-.env.*.local
+.wrangler/
+.functions/
+.pages/
+
 
 # =========================
-# Temporary / draft files
+# 6. ENVIRONMENT / SECURITY
+# =========================
+.env
+.env.*
+*.key
+*.pem
+*.secret
+
+
+# =========================
+# 7. TEMPORARY / WORKING FILES
 # =========================
 *.tmp
 *.temp
 *.bak
 *.swp
+*.draft.md
+
 
 # =========================
-# Content drafts (optional control layer)
-# uncomment if you want draft isolation later
-# =========================
-# drafts/
-# *_draft.*
-
-# =========================
-# PDF / export clutter (optional, depends on workflow)
-# =========================
-*.pdf~
-*.docx~
-*.epub~
-
-# =========================
-# Cloudflare / deployment artifacts
-# =========================
-.wrangler/
-.functions/
-.pages/
-
-# =========================
-# IDE / editor files
-# =========================
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# =========================
-# Archive / accidental dumps
+# 8. ARCHIVES / EXPORT CLUTTER
 # =========================
 *.zip
 *.tar
 *.tar.gz
+*.pdf~
+*.docx~
+*.epub~
+
+
+# =========================
+# 9. PROTOSYNTHESIS IP BOUNDARY
+# (CONSTITUTIONAL SYSTEM LAYER)
+# =========================
+
+# 🔴 PRIVATE INTELLECTUAL PROPERTY (NEVER TRACK)
+private/
+
+# 🔴 CORE KERNEL SYSTEM (EXPLICIT TRACK ONLY OUTSIDE THIS PATH)
+architecture/kernel-core/
+
+# 🔴 OPTIONAL PROPRIETARY MODULES (ONLY IF USED)
+private/engines/
+private/algorithms/
+private/secrets/
