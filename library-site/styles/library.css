@@ -1,0 +1,445 @@
+:root {
+
+  /* =====================================
+     PROTOSYNTHESIS LIBRARY DESIGN SYSTEM
+     v1.1
+  ===================================== */
+
+  /* Foundation */
+
+  --bg: #05060a;
+  --bg-secondary: #0b0f17;
+
+  /* Typography */
+
+  --fg: #edf4ff;
+  --muted: #95a3b8;
+
+  /* Knowledge Accent */
+
+  --accent: #35d6ff;
+  --accent-soft: rgba(53,214,255,0.18);
+  --accent-strong: rgba(53,214,255,0.35);
+
+  /* Surfaces */
+
+  --surface: rgba(255,255,255,0.03);
+  --surface-hover: rgba(255,255,255,0.05);
+
+  --border: rgba(255,255,255,0.10);
+  --border-hover: rgba(53,214,255,0.35);
+
+  /* Layout */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  --container: 1100px;
+
+  /* Effects */
+
+  --shadow-glow:
+    0 0 20px rgba(53,214,255,0.15);
+
+  --shadow-glow-strong:
+    0 0 30px rgba(53,214,255,0.25);
+
+  /* Motion */
+
+  --transition: 0.25s ease;
+}
+
+/* =====================================
+   RESET
+===================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #0d1320 0%,
+      var(--bg) 65%
+    );
+
+  color: var(--fg);
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+/* =====================================
+   GLOW
+===================================== */
+
+.glow {
+
+  position: fixed;
+
+  width: 700px;
+  height: 700px;
+
+  top: -250px;
+  left: -250px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(53,214,255,0.15),
+      transparent 65%
+    );
+
+  filter: blur(60px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+/* =====================================
+   LAYOUT
+===================================== */
+
+.container {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+  max-width: var(--container);
+
+  margin: 0 auto;
+
+  padding: 60px 24px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* =====================================
+   BRANDING SYSTEM
+===================================== */
+
+.logo {
+
+  width: 160px;
+
+  height: auto;
+
+  margin: 0 auto 30px auto;
+
+  display: block;
+
+  filter:
+    drop-shadow(
+      0 0 20px
+      rgba(53,214,255,0.35)
+    );
+
+  animation:
+    logo-float 6s ease-in-out infinite;
+}
+
+@keyframes logo-float {
+
+  0%,100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* =====================================
+   TYPOGRAPHY
+===================================== */
+
+h1 {
+
+  font-size: 3rem;
+
+  letter-spacing: 0.08em;
+
+  margin-bottom: 12px;
+}
+
+h2 {
+
+  font-size: 1.5rem;
+
+  margin-bottom: 14px;
+
+  color: #ffffff;
+}
+
+h3 {
+
+  font-size: 1.15rem;
+
+  margin-bottom: 10px;
+
+  color: #ffffff;
+}
+
+p {
+
+  line-height: 1.8;
+
+  color: var(--muted);
+}
+
+.subtitle {
+
+  color: var(--muted);
+
+  margin-bottom: 40px;
+
+  font-size: 1.05rem;
+}
+
+.tagline {
+
+  color: var(--muted);
+
+  max-width: 750px;
+
+  margin:
+    0 auto
+    40px auto;
+
+  line-height: 1.7;
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.buttons {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  margin-bottom: 50px;
+}
+
+.btn {
+
+  display: inline-block;
+
+  padding: 12px 20px;
+
+  text-decoration: none;
+
+  color: var(--fg);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-md);
+
+  background: var(--surface);
+
+  transition: var(--transition);
+}
+
+.btn:hover {
+
+  border-color: var(--border-hover);
+
+  box-shadow: var(--shadow-glow);
+
+  transform: translateY(-2px);
+}
+
+/* =====================================
+   CONTENT AREA
+===================================== */
+
+.content {
+
+  max-width: 800px;
+
+  margin: 0 auto;
+
+  line-height: 1.8;
+}
+
+.content h2,
+.content h3 {
+
+  margin-top: 30px;
+}
+
+.content p {
+
+  margin-bottom: 18px;
+}
+
+/* =====================================
+   REGISTRY SECTIONS
+===================================== */
+
+.section {
+
+  margin-top: 40px;
+}
+
+.section-header {
+
+  margin-bottom: 15px;
+}
+
+/* =====================================
+   CONTENT CARDS
+===================================== */
+
+.item {
+
+  padding: 16px 18px;
+
+  margin-bottom: 12px;
+
+  border-radius: var(--radius-md);
+
+  border: 1px solid var(--border);
+
+  background: var(--surface);
+
+  transition: var(--transition);
+}
+
+.item:hover {
+
+  border-color: var(--border-hover);
+
+  background: var(--surface-hover);
+
+  box-shadow: var(--shadow-glow);
+
+  transform: translateY(-2px);
+}
+
+.item strong {
+
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: white;
+}
+
+.item small {
+
+  display: block;
+
+  color: var(--muted);
+
+  margin-top: 3px;
+}
+
+/* =====================================
+   EMPTY STATES
+===================================== */
+
+.empty {
+
+  padding: 10px 0;
+
+  color: var(--muted);
+
+  font-style: italic;
+
+  opacity: 0.75;
+}
+
+/* =====================================
+   INFO PANELS
+===================================== */
+
+.panel {
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-lg);
+
+  background: var(--surface);
+
+  padding: 24px;
+
+  margin-top: 30px;
+}
+
+.panel:hover {
+
+  border-color: var(--border-hover);
+
+  box-shadow: var(--shadow-glow);
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+
+  margin-top: 70px;
+
+  text-align: center;
+
+  color: #6f7d91;
+
+  font-size: 0.85rem;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .buttons {
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .btn {
+
+    width: 100%;
+
+    max-width: 320px;
+
+    text-align: center;
+  }
+}
