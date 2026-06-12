@@ -110,10 +110,12 @@
           container.appendChild(section);
         }
 
-        renderSection('Books', library.books);
-        renderSection('Ebooks', library.ebooks);
         renderSection('Articles', library.articles);
         renderSection('Whitepapers', library.whitepapers);
+        renderSection('eBooks', library.ebooks);
+        renderSection('Books', library.books);
+        
+        
 
       } catch (err) {
         document.getElementById('content').innerHTML =
