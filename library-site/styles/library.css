@@ -380,6 +380,27 @@ p {
 }
 
 /* =====================================
+   REGISTRY ITEM LINKS
+===================================== */
+
+.item-link {
+
+  color: var(--fg);
+
+  text-decoration: none;
+
+  transition: var(--transition);
+}
+
+.item-link:hover {
+
+  color: var(--accent);
+
+  text-shadow:
+    0 0 10px rgba(53,214,255,0.45);
+}
+
+/* =====================================
    INFO PANELS
 ===================================== */
 
