@@ -36,7 +36,7 @@
       "articles": [
         {
           "id": "article-001",
-          "title": "Foundational Manifesto",
+          "title": "Core Foundational Manifesto",
           "path": "/content/articles/foundational-manifesto-001.pdf",
           "status": "draft",
           "visibility": "public",
@@ -47,7 +47,7 @@
       "whitepapers": [
         {
           "id": "paper-001",
-          "title": "ProtoSynthesis Whitepaper",
+          "title": "The ProtoSynthesis Whitepaper",
           "path": "/content/whitepapers/protosynthesis-whitepaper-001.pdf",
           "status": "draft",
           "visibility": "public",
@@ -55,7 +55,7 @@
         },
         {
           "id": "paper-002",
-          "title": "Celestial Source Code Whitepaper",
+          "title": "The Celestial Source Code Whitepaper",
           "path": "/content/whitepapers/celestial-source-code-whitepaper-002.pdf",
           "status": "draft",
           "visibility": "public",
