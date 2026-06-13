@@ -1,7 +1,7 @@
 {
   "library": {
     "name": "ProtoSynthesis Library",
-    "version": "1.3",
+    "version": "2.0",
     "content": {
       "books": [
         {
@@ -42,7 +42,7 @@
       "ebooks": [
         {
           "id": "ebook-001",
-          "title": "Algorithm of Astrology: Celestial Source Code",
+          "title": "Astrology Algorithm: Celestial Source Code",
           "path": "/content/ebooks/celestial-source-code-ebook001.html",
           "status": "draft",
           "visibility": "public",
@@ -61,7 +61,7 @@
       "articles": [
         {
           "id": "article-001",
-          "title": "Core Foundational Manifesto",
+          "title": "Core Foundational",
           "path": "/content/articles/foundational-manifesto-article001.html",
           "status": "draft",
           "visibility": "public",
@@ -72,7 +72,7 @@
       "whitepapers": [
         {
           "id": "paper-001",
-          "title": "Neuro-Technical Systems Synthesis Whitepaper",
+          "title": "Neuro-Technical Systems Synthesis",
           "path": "/content/whitepapers/neuro-technical-systems-synthesis-whitepaper001.html",
           "status": "draft",
           "visibility": "public",
@@ -80,7 +80,7 @@
         },
         {
           "id": "paper-002",
-          "title": "The ProtoSynthesis Whitepaper",
+          "title": "The ProtoSynthesis",
           "path": "/content/whitepapers/protosynthesis-whitepaper002.html",
           "status": "draft",
           "visibility": "hidden",
