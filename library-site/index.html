@@ -22,6 +22,117 @@
       href="/assets/favicon/site.webmanifest">
   
   <link rel="stylesheet" href="/styles/library.css">
+  <style>
+    /* --------------------------
+    LIBRARY DASHBOARD EXTENSIONS
+    -------------------------- */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+
+    .dashboard-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dashboard-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-glow);
+      transform: translateY(-2px);
+    }
+
+    .dashboard-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+
+    .dashboard-card.gold::before {
+      background: linear-gradient(to bottom, #d4af37, transparent);
+    }
+
+    .dashboard-card.white::before {
+      background: linear-gradient(to bottom, #f8fbff, transparent);
+    }
+
+    .dashboard-card h3 {
+      color: #ffffff;
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+    }
+
+    .dashboard-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .highlight-box {
+      background: rgba(53,214,255,0.08);
+      border: 1px solid var(--accent-soft);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .highlight-box h3 {
+      color: var(--accent);
+      margin-top: 0;
+    }
+
+    .reading-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0 0;
+    }
+
+    .reading-list li {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      color: #e0e0e0;
+    }
+
+    .reading-list li:last-child {
+      border-bottom: none;
+    }
+
+    .archive-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .archive-date {
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+
+    .archive-title {
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .dashboard-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -40,7 +151,7 @@
       <h1>ProtoSynthesis Library</h1>
 
       <div class="subtitle">
-        Structured knowledge repository and registry system
+        Structured knowledge repository · Infinite information hub · Living archive
       </div>
 
     </div>
@@ -58,22 +169,85 @@
 
     </div>
 
-    <!-- LIBRARY OVERVIEW -->
+
+    <!-- ✅ NEW LIBRARY DASHBOARD / TOP LAYER -->
     <section class="section">
-      <h2>Library Overview</h2>
+      <h2>Library Overview & Mission</h2>
 
       <p>
-        The ProtoSynthesis Library is the structured knowledge repository within the wider ProtoSynthesis architecture.
+        The ProtoSynthesis Library is the structured knowledge repository within the wider ProtoSynthesis architecture — a permanent, growing archive designed to preserve, organise, and connect every piece of knowledge produced within the system.
+      </p>
+      <p>
+        It provides organised access to books, articles, whitepapers, research materials, historical records, and knowledge artefacts — all indexed through a unified registry system. <em>The Architecture defines systems and structural rules; the Library contains the knowledge produced, discovered, and preserved within those systems.</em>
       </p>
 
-      <p>
-        It provides organised access to books, articles, whitepapers, research materials, and other knowledge artefacts
-        indexed through a unified registry system.
-      </p>
+      <!-- DASHBOARD GRID -->
+      <div class="dashboard-grid">
 
+        <!-- KNOWLEDGE ARCHIVES -->
+        <div class="dashboard-card gold">
+          <h3>📜 Research & Historical Archives</h3>
+          <p>
+            Permanent records of research, source materials, historical context, and reference documents. This section preserves the background, evolution, and lineage of every concept in the Algorithm of Everything series.
+          </p>
+          <div class="archive-entry">
+            <span class="archive-title">Codex Preservation Protocol</span>
+            <span class="archive-date">2026‑06‑12</span>
+          </div>
+          <div class="archive-entry">
+            <span class="archive-title">Foundational Source Records</span>
+            <span class="archive-date">2026‑05‑28</span>
+          </div>
+        </div>
+
+        <!-- READING LIST -->
+        <div class="dashboard-card white">
+          <h3>📖 Monthly Reading & Recommendations</h3>
+          <p>
+            Curated selections, essential texts, and suggested pathways through the library — updated monthly to guide exploration and deeper study.
+          </p>
+          <ul class="reading-list">
+            <li>• Algorithm of Astrology: Celestial Source Code</li>
+            <li>• Battle Books of Art: Entering the Zone</li>
+            <li>• Neuro‑Technical Systems Synthesis Whitepaper</li>
+            <li>• Core Foundational Manifesto</li>
+          </ul>
+        </div>
+
+        <!-- KNOWLEDGE TIMELINE -->
+        <div class="dashboard-card">
+          <h3>🗓️ Knowledge Timeline & Changelog</h3>
+          <p>
+            Track how the library grows, evolves, and expands. See new additions, revisions, and the history of how knowledge has been refined and synthesised over time.
+          </p>
+          <div class="archive-entry">
+            <span class="archive-title">eBook Structure Update</span>
+            <span class="archive-date">2026‑06‑10</span>
+          </div>
+          <div class="archive-entry">
+            <span class="archive-title">Battle Books Category Added</span>
+            <span class="archive-date">2026‑06‑05</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FUTURE VISION -->
+      <div class="highlight-box">
+        <h3>🌱 Growing Into a Living Knowledge Hub</h3>
+        <p>
+          This library is designed to expand infinitely. In future phases, it will become a fully interactive wiki‑forum — allowing registered users to contribute, discuss, link concepts, and build upon the collective knowledge of the ProtoSynthesis system.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- ✅ ORIGINAL REGISTRY SECTION (UNCHANGED) -->
+    <section class="section">
+      <h2>Knowledge Registry</h2>
       <p>
-        The Architecture defines systems and structural rules.
-        The Library contains the knowledge produced within those systems.
+        Below is the active index of all published works, organised by type and category.
       </p>
     </section>
 
