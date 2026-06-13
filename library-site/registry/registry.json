@@ -61,7 +61,7 @@
       "articles": [
         {
           "id": "article-001",
-          "title": "Core Foundational",
+          "title": "Core Foundational Manifesto",
           "path": "/content/articles/foundational-manifesto-article001.html",
           "status": "draft",
           "visibility": "public",
