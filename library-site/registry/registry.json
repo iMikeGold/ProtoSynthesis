@@ -27,6 +27,15 @@
           "status": "draft",
           "visibility": "public",
           "tags": ["foundation", "logic", "system"]
+        },
+
+        {
+          "id": "book-004",
+          "title": "Battle Books of Art",
+          "path": "/content/books/battle-books-of-art-book004.html",
+          "status": "draft",
+          "visibility": "public",
+          "tags": ["foundation", "creative", "learning"]
         }
       ],
 
