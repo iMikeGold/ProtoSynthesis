@@ -111,20 +111,27 @@
             section.appendChild(empty);
           } else {
             items.forEach(item => {
+
+              if (item.visibility === "hidden") {
+                return;
+              }
+            
               const div = document.createElement('div');
+            
               div.className = 'item';
-              
-            div.innerHTML = `
-              <strong>
-                <a class="item-link" href="${item.path}">
-                 ${item.title}
-                </a>
-              </strong>
-              <small>${item.id}</small>
-              <small>${item.path}</small>
-            `;
-              
+            
+              div.innerHTML = `
+                <strong>
+                  <a class="item-link" href="${item.path}">
+                    ${item.title}
+                  </a>
+                </strong>
+                <small>${item.id}</small>
+                <small>${item.path}</small>
+              `;
+            
               section.appendChild(div);
+            
             });
           }
 
