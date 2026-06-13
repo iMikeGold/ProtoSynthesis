@@ -1,0 +1,347 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Algorithm of Astrology: Celestial Source Code — ProtoSynthesis Library</title>
+
+<link rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png">
+
+<link rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon/favicon-32x32.png">
+
+<link rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon/favicon-16x16.png">
+
+<link rel="manifest"
+      href="/assets/favicon/site.webmanifest">
+  
+  <link rel="stylesheet" href="/styles/library.css">
+  <style>
+    /* --------------------------
+    EBOOK THEME: PORTAL · KNOWLEDGE SOFT
+    Distinct from Books: immersive, flowing, magazine‑style, portable
+    -------------------------- */
+    :root {
+      --eb-accent: #35d6ff;
+      --eb-muted: #78a8c2;
+      --eb-glow: rgba(53,214,255,0.18);
+      --eb-bg: rgba(53,214,255,0.04);
+    }
+
+    .ebook-cover {
+      max-width: 420px;
+      margin: 0 auto 3rem auto;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 0 40px rgba(53,214,255,0.25), inset 0 0 0 1px rgba(255,255,255,0.08);
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f1a28, #142335);
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .ebook-cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(53,214,255,0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .ebook-cover h1 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .ebook-cover h2 {
+      font-size: 1.1rem;
+      color: var(--eb-muted);
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .ebook-meta {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      color: var(--eb-muted);
+      font-size: 0.9rem;
+      margin-bottom: 3rem;
+    }
+
+    .content.ebook {
+      font-size: 1.02rem;
+      line-height: 1.85;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .content.ebook p {
+      color: #d6e2f0;
+      margin-bottom: 1.4rem;
+    }
+
+    .content.ebook h2 {
+      color: var(--eb-accent);
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      text-shadow: 0 0 15px var(--eb-glow);
+      position: relative;
+    }
+
+    .content.ebook h2::before {
+      content: "✦";
+      color: var(--eb-muted);
+      font-size: 0.8rem;
+      position: absolute;
+      left: -1.8rem;
+      top: 0.2rem;
+      opacity: 0.6;
+    }
+
+    .content.ebook h3 {
+      color: #e0edf7;
+      margin-top: 2rem;
+      font-size: 1.15rem;
+    }
+
+    .ebook-opening {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #eaf4ff;
+      border-left: 3px solid var(--eb-accent);
+      padding: 1rem 1.5rem;
+      background: var(--eb-bg);
+      border-radius: var(--radius-md);
+      margin: 2rem 0;
+    }
+
+    .ebook-feature {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      align-items: start;
+      background: var(--eb-bg);
+      border: 1px solid rgba(53,214,255,0.12);
+      border-radius: var(--radius-md);
+      padding: 1.2rem;
+      margin: 1.2rem 0;
+    }
+
+    .ebook-feature .icon {
+      font-size: 1.5rem;
+      color: var(--eb-accent);
+      line-height: 1;
+    }
+
+    .ebook-feature strong {
+      color: #ffffff;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .ebook-navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(53,214,255,0.1);
+    }
+
+    .ebook-badges {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .badge {
+      background: rgba(53,214,255,0.1);
+      color: var(--eb-accent);
+      font-size: 0.75rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      border: 1px solid rgba(53,214,255,0.2);
+    }
+
+    @media (max-width: 600px) {
+      .ebook-feature {
+        grid-template-columns: 1fr;
+      }
+      .content.ebook h2::before {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="glow"></div>
+
+  <div class="container">
+
+    <!-- LOGO -->
+    <div class="center">
+      <img
+        class="logo"
+        src="/assets/images/ProtoSynthesis 7Dot Logo Only Main ProtoGlyph Design 2.2.png"
+        alt="ProtoSynthesis Logo"
+      >
+      <h1>ProtoSynthesis Library</h1>
+      <div class="subtitle">eBooks · Portable Knowledge · Endless Library</div>
+    </div>
+
+    <!-- NAVIGATION -->
+    <div class="buttons">
+      <a class="btn" href="https://protosynthesis.co.uk">Home</a>
+      <a class="btn" href="https://protosynthesis.co.uk/system/system-overview.html">System</a>
+      <a class="btn" href="https://protosynthesis.co.uk/architecture/architecture-overview.html">Architecture</a>
+      <a class="btn" href="/library.html">Library</a>
+      <a class="btn" href="#" style="opacity:0.6; pointer-events:none;">Celestial Source Code</a>
+    </div>
+
+    <!-- EBOOK HEADER / COVER -->
+    <div class="ebook-cover">
+      <h1>Algorithm of Astrology</h1>
+      <h2>Celestial Source Code</h2>
+    </div>
+
+    <div class="ebook-meta">
+      <span>EBOOK‑001</span>
+      <span>Architecture · Systems · Foundation</span>
+      <span>Digital Edition · Portable Format</span>
+    </div>
+
+    <div class="ebook-badges">
+      <span class="badge">Guide</span>
+      <span class="badge">Reference</span>
+      <span class="badge">Portable</span>
+    </div>
+
+    <!-- EBOOK CONTENT -->
+    <section class="section content ebook">
+
+      <div class="ebook-opening">
+        The stars do not write your story — they publish your specifications. This ebook decodes the celestial language into a functional blueprint: the source code of your energy architecture.
+      </div>
+
+      <h2>INTRODUCTION: THE SKY AS INTERFACE</h2>
+      <p>
+        Since the earliest civilisations, humanity has looked upward and seen meaning. But what if the planets are not symbols of fate — but components of a universal interface? What if the zodiac is not a set of personality labels, but a frequency map describing how energy behaves, flows, and integrates?
+      </p>
+      <p>
+        <em>Celestial Source Code</em> reframes astrology entirely within the ProtoSynthesis framework: as a complete, documented system of energy mechanics. It is designed to be carried, referenced, and applied — a portable manual for understanding the operating system of life itself.
+      </p>
+
+      <h2>1. THE CELESTIAL STACK</h2>
+      <p>
+        Just as software is built in layers, the cosmic architecture is structured in a hierarchy of function, frequency, and focus. We break it down into four core layers:
+      </p>
+
+      <div class="ebook-feature">
+        <div class="icon">🜁</div>
+        <div>
+          <strong>Base Frequency: The Signs</strong>
+          Every sign is a distinct oscillator. Fire broadcasts, Earth stabilises, Air routes, Water stores. These are not “traits” — they are fundamental processing modes, the raw material of your system.
+        </div>
+      </div>
+
+      <div class="ebook-feature">
+        <div class="icon">🜂</div>
+        <div>
+          <strong>Processing Nodes: The Planets</strong>
+          Each planet governs a specific function — identity, communication, action, expansion, structure. They are the CPU, memory, power supply, and long‑range transceivers of your design.
+        </div>
+      </div>
+
+      <div class="ebook-feature">
+        <div class="icon">🜃</div>
+        <div>
+          <strong>Execution Context: The Houses</strong>
+          The 12 houses define where energy operates. They are the directories, environments, and domains of life — the interface points between your internal system and the external world.
+        </div>
+      </div>
+
+      <div class="ebook-feature">
+        <div class="icon">🜄</div>
+        <div>
+          <strong>Connection Logic: Aspects</strong>
+          Angles define bandwidth, resistance, and flow. Hard aspects are transformers — they create voltage. Soft aspects are open channels — they allow smooth transmission. Every angle is a circuit design choice.
+        </div>
+      </div>
+
+      <h2>2. DECODING THE SOURCE</h2>
+      <p>
+        A birth chart is a snapshot of the system at initialisation. It contains no judgement, no “good” or “bad” — only configuration. When you read it as code rather than prophecy, everything changes:
+      </p>
+      <p>
+        A challenging placement is not a curse — it is a high‑performance component built to handle heavy loads. A retrograde is not backward motion — it is internal calibration mode. A conjunction is not overload — it is a direct high‑speed bus link between core functions.
+      </p>
+      <p>
+        This is the shift from <em>interpretation</em> to <em>engineering</em>. You stop asking “what does this mean about me?” and begin asking “what does this component do, and how do I operate it at peak efficiency?”
+      </p>
+
+      <h2>3. DYNAMIC RUNTIME: TRANSITS & EVOLUTION</h2>
+      <p>
+        The sky is not static. Planets move, cycles turn, and configurations shift — exactly like software updates, system patches, and capacity expansions.
+      </p>
+      <p>
+        Fast cycles (Moon, Mercury) are daily I/O refreshes — fine‑tuning and information exchange. Medium cycles (Venus, Mars, Jupiter) are feature updates and expansion phases. Slow cycles (Saturn through Pluto) are kernel upgrades — they rewrite the operating system itself. They feel heavy because they are re‑forging the metal of your core.
+      </p>
+      <p>
+        Time is not a line or a circle — it is a spiral. Themes return, but you return with higher bandwidth, better insulation, and greater capacity. Same input → vastly higher output.
+      </p>
+
+      <h2>4. SYNTHESIS: CODE TO CONSCIOUSNESS</h2>
+      <p>
+        Knowledge of the source code is only half the equation. The other half is <em>running it</em> — consciously, deliberately, and with full awareness of your design.
+      </p>
+      <p>
+        ProtoSynthesis teaches that you are not the code — you are the developer, the operator, and the hardware all at once. You do not change your configuration; you understand it, optimise it, and use it to create exactly what you intend.
+      </p>
+      <div class="proto-quote">
+        Structure × Awareness = Destiny<br>
+        The code is given. The execution is yours.
+      </div>
+
+      <h2>5. HOW TO USE THIS EBOOK</h2>
+      <p>
+        This is designed as a portable reference — keep it open, bookmarked, and accessible. Each section includes:
+      </p>
+      <ul style="margin:1rem 0 1rem 1.5rem; color:#d6e2f0; line-height:1.8;">
+        <li><strong>Technical Definition:</strong> The exact function and mechanics of the component.</li>
+        <li><strong>Consciousness Translation:</strong> What it feels like, means, and represents in human experience.</li>
+        <li><strong>Operational Guide:</strong> How to regulate, direct, and maximise its power.</li>
+      </ul>
+      <p>
+        Whether you are studying your own chart, guiding others, or simply learning the language of the cosmos — this is your manual to the most powerful operating system ever designed: <em>you</em>.
+      </p>
+
+      <!-- NAVIGATION BETWEEN EBOOKS -->
+      <div class="ebook-navigation">
+        <a class="btn" href="#" style="opacity:0.5; pointer-events:none;">← Previous</a>
+        <a class="btn" href="/content/ebooks/visioneers-guide-ebook002.html">Next: The Visioneer's Guide →</a>
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      © ProtoSynthesis 2026–Present · EBOOK‑001 · Celestial Source Code · L3 Knowledge Layer
+    </footer>
+
+  </div>
+
+</body>
+</html>
