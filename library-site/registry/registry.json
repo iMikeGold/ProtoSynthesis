@@ -41,8 +41,8 @@
         },
          {
           "id": "ebook-002",
-          "title": "Algorithm of Astrology: The Visionary Guide",
-          "path": "/content/whitepapers/visionary-guide-ebook002.pdf",
+          "title": "Algorithm of Astrology: The Visioneer's Guide",
+          "path": "/content/whitepapers/visioneers-guide-ebook002.pdf",
           "status": "draft",
           "visibility": "public",
           "tags": ["architecture", "systems", "protocol"]
@@ -64,7 +64,7 @@
         {
           "id": "paper-001",
           "title": "Neuro-Technical Systems Synthesis Whitepaper",
-          "path": "/content/whitepapers/neuro-technicalsSystems-synthesis-whitepaper001.pdf",
+          "path": "/content/whitepapers/neuro-technical-systems-synthesis-whitepaper001.pdf",
           "status": "draft",
           "visibility": "public",
           "tags": ["architecture", "systems", "protocol"]
