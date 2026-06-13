@@ -1,5 +1,5 @@
 :root {
-  /* --- COLOUR SYSTEM — MATCHING YOUR BRAND --- */
+  /* --- COLOUR SYSTEM — EXACTLY YOURS --- */
   --bg: #1a1428;               /* Deep plum purple base */
   --bg-obsidian: #0e0b16;      /* Darker obsidian shade */
   --fg: #f0f0f5;               /* Clean light text */
@@ -8,7 +8,7 @@
   --accent-synthesis: #7c5cff; /* Purple = Synthesis */
   --accent-knowledge: #35d6ff;/* Cyan = Knowledge */
   --accent-value: #d4af37;     /* Gold = Value */
-  --accent-clarity: #ffffff;   /* White = Clarity */
+  --accent-clarity: #ffffff;   /* White/Silver = Clarity */
 
   --surface: rgba(255,255,255,0.03);
   --border: rgba(255,255,255,0.08);
@@ -32,6 +32,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   padding: 40px 20px;
+  line-height: 1.8; /* FIX: restores proper line height on all pages */
 }
 
 /* --- LAYOUT --- */
@@ -89,7 +90,7 @@ body {
 
 .main-content {
   flex: 1;
-  min-width: 0; /* Fixes overflow issues */
+  min-width: 0;
 }
 
 .center {
@@ -98,7 +99,7 @@ body {
 
 /* --- LOGO & TYPOGRAPHY --- */
 .logo {
-  width: 160px; /* SAME SIZE AS LIBRARY SITE */
+  width: 160px;
   height: auto;
   margin-bottom: 20px;
   filter: drop-shadow(0 0 20px rgba(124, 92, 255, 0.4));
@@ -106,7 +107,7 @@ body {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3rem); /* RESPONSIVE — NEVER CUTS OFF */
+  font-size: clamp(2rem, 5vw, 3rem);
   letter-spacing: 0.08em;
   margin-bottom: 15px;
   color: var(--accent-clarity);
@@ -120,7 +121,7 @@ h1 {
   margin: 0 auto 35px;
 }
 
-/* --- BUTTONS --- */
+/* --- BUTTONS — COLOUR MATCHING RULES --- */
 .buttons {
   display: flex;
   gap: 15px;
@@ -139,18 +140,23 @@ h1 {
   background: var(--surface);
 }
 
+/* Standard buttons = Purple hover */
 .btn:hover {
   border-color: var(--accent-synthesis);
   box-shadow: 0 0 20px rgba(124, 92, 255, 0.25);
   transform: translateY(-2px);
 }
 
+/* Library button = Cyan/Green highlight ALWAYS (as you asked) */
 .btn-knowledge {
-  border-color: rgba(53,214,255,0.2);
+  border-color: rgba(53,214,255,0.35);
+  background: rgba(53,214,255,0.08);
+  color: var(--accent-knowledge);
 }
 .btn-knowledge:hover {
   border-color: var(--accent-knowledge);
   box-shadow: 0 0 20px rgba(53,214,255,0.2);
+  color: #ffffff;
 }
 
 .btn-small {
@@ -165,7 +171,8 @@ h1 {
   border-bottom: 1px solid var(--accent-synthesis);
 }
 
-/* --- CONTENT BLOCKS --- */
+/* --- ✅ CONTENT BLOCKS — STANDARD FOR ALL PAGES --- */
+/* This is the box style you wanted — ALL pages now use this */
 .content-block {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -174,8 +181,56 @@ h1 {
   margin-bottom: 2rem;
   text-align: left;
   line-height: 1.8;
+  position: relative;
+  overflow: hidden;
 }
 
+/* LEFT GLOW / ACCENT BORDERS — PER COLOUR PURPOSE */
+/* Synthesis = Purple */
+.accent-synthesis {
+  border-left: 3px solid var(--accent-synthesis);
+  box-shadow: inset 8px 0 12px -8px rgba(124, 92, 255, 0.2);
+}
+.accent-synthesis:hover {
+  border-left-color: var(--accent-synthesis);
+  box-shadow: inset 8px 0 16px -6px rgba(124, 92, 255, 0.35);
+  background: rgba(124, 92, 255, 0.04);
+}
+
+/* Knowledge = Cyan */
+.accent-knowledge {
+  border-left: 3px solid var(--accent-knowledge);
+  box-shadow: inset 8px 0 12px -8px rgba(53, 214, 255, 0.2);
+}
+.accent-knowledge:hover {
+  border-left-color: var(--accent-knowledge);
+  box-shadow: inset 8px 0 16px -6px rgba(53, 214, 255, 0.35);
+  background: rgba(53, 214, 255, 0.04);
+}
+
+/* Value = Gold */
+.accent-value {
+  border-left: 3px solid var(--accent-value);
+  box-shadow: inset 8px 0 12px -8px rgba(212, 175, 55, 0.2);
+}
+.accent-value:hover {
+  border-left-color: var(--accent-value);
+  box-shadow: inset 8px 0 16px -6px rgba(212, 175, 55, 0.35);
+  background: rgba(212, 175, 55, 0.04);
+}
+
+/* ✅ Clarity = White/Silver (fixed for Reference Layer) */
+.accent-clarity {
+  border-left: 3px solid var(--accent-clarity);
+  box-shadow: inset 8px 0 12px -8px rgba(255, 255, 255, 0.25);
+}
+.accent-clarity:hover {
+  border-left-color: var(--accent-clarity);
+  box-shadow: inset 8px 0 16px -6px rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Text styles inside blocks */
 .content-block h2 {
   color: var(--accent-clarity);
   margin-bottom: 1rem;
@@ -186,12 +241,6 @@ h1 {
   margin: 1.5rem 0 0.8rem;
   font-size: 1.1rem;
 }
-
-/* ACCENT VARIANTS */
-.accent-synthesis { border-left: 3px solid var(--accent-synthesis); }
-.accent-knowledge { border-left: 3px solid var(--accent-knowledge); }
-.accent-value     { border-left: 3px solid var(--accent-value); }
-
 .content-block p,
 .content-block li {
   color: #c9c6d8;
@@ -201,7 +250,7 @@ h1 {
   padding-left: 1.2rem;
 }
 
-/* --- GRID LINKS --- */
+/* --- GRID LINKS — HOVER MATCHES COLOUR --- */
 .link-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -217,10 +266,26 @@ h1 {
   transition: var(--transition);
   font-size: 0.9rem;
 }
+/* Default link hover = Cyan (Knowledge) */
 .item-link:hover {
   color: var(--accent-knowledge);
   background: rgba(53,214,255,0.06);
   padding-left: 1rem;
+}
+/* If inside synthesis block = Purple hover */
+.accent-synthesis .item-link:hover {
+  color: var(--accent-synthesis);
+  background: rgba(124,92,255,0.06);
+}
+/* If inside value block = Gold hover */
+.accent-value .item-link:hover {
+  color: var(--accent-value);
+  background: rgba(212,175,55,0.06);
+}
+/* If inside clarity block = White/Silver hover */
+.accent-clarity .item-link:hover {
+  color: var(--accent-clarity);
+  background: rgba(255,255,255,0.06);
 }
 
 /* --- UPDATES LIST --- */
@@ -285,7 +350,6 @@ footer {
 
 /* =========================
    ARCHITECTURE SIDEBAR
-   (kept from original, updated colours)
    ========================= */
 
 .arch-sidebar {
