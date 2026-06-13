@@ -8,7 +8,7 @@
           "id": "book-001",
           "title": "Algorithm of Everything",
           "path": "/content/books/algorithm-of-everything-book001.html",
-          "status": "draft",
+          "status": "hidden",
           "visibility": "public",
           "tags": ["foundation"]
         },
@@ -25,7 +25,7 @@
           "title": "Algorithm of Attraction",
           "path": "/content/books/algorithm-of-attraction-book003.html",
           "status": "draft",
-          "visibility": "public",
+          "visibility": "hidden",
           "tags": ["foundation", "logic", "system"]
         },
 
@@ -53,7 +53,7 @@
           "title": "Algorithm of Astrology: The Visioneer's Guide",
           "path": "/content/whitepapers/visioneers-guide-ebook002.html",
           "status": "draft",
-          "visibility": "public",
+          "visibility": "hidden",
           "tags": ["architecture", "systems", "protocol"]
         }
       ],
@@ -83,7 +83,7 @@
           "title": "The ProtoSynthesis Whitepaper",
           "path": "/content/whitepapers/protosynthesis-whitepaper002.html",
           "status": "draft",
-          "visibility": "public",
+          "visibility": "hidden",
           "tags": ["architecture", "systems", "framework"]
         }
       ]
