@@ -100,10 +100,28 @@
   </section>
 
   <footer>
-    © ProtoSynthesis 2026 · Operational Reference Layer L0 · Foundational Authority
+    © ProtoSynthesis 2026 · Constitutional Reference Layer L0 · Foundational Authority
   </footer>
 
 </div>
 
+    <!-- SAME SCRIPT AS SYSTEM OVERVIEW -->
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const sideMenu = document.getElementById('sideMenu');
+let startX = 0;
+
+menuToggle.addEventListener('click', () => sideMenu.classList.toggle('active'));
+
+function closeMenu() {
+  sideMenu.classList.remove('active');
+}
+
+sideMenu.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+sideMenu.addEventListener('touchmove', e => {
+  if (startX - e.touches[0].clientX > 50) closeMenu();
+});
+</script>
+    
 </body>
 </html>
