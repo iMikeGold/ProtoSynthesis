@@ -29,12 +29,12 @@
 
   <div class="glow"></div>
 
-  <!-- ✅ MENU BUTTON → HIDES WHEN OPEN, SHOWS WHEN CLOSED -->
+  <!-- MENU BUTTON — TOP RIGHT -->
   <div class="menu-toggle" id="menuToggle">☰ Menu</div>
 
   <div class="container">
 
-    <!-- ✅ SIDEBAR — CLOSES ON CLICK + SWIPE SUPPORT -->
+    <!-- SIDEBAR — CLOSES ON CLICK / SWIPE -->
     <aside class="side-menu" id="sideMenu">
       <nav>
         <h4>Navigation</h4>
@@ -167,37 +167,24 @@
 
   </div>
 
-<!-- ✅ JAVASCRIPT: CLOSE ON CLICK + SWIPE GESTURE -->
+<!-- FIXED SCRIPT — NO GLITCHES, NO AUTO-OPEN -->
 <script>
 const menuToggle = document.getElementById('menuToggle');
 const sideMenu = document.getElementById('sideMenu');
 let startX = 0;
 
 // Toggle open/close
-menuToggle.addEventListener('click', () => {
-  sideMenu.classList.toggle('active');
-  menuToggle.classList.toggle('hidden', sideMenu.classList.contains('active'));
-});
+menuToggle.addEventListener('click', () => sideMenu.classList.toggle('active'));
 
 // Close when clicking any link
 function closeMenu() {
   sideMenu.classList.remove('active');
-  menuToggle.classList.remove('hidden');
 }
 
-// Swipe to close
+// Swipe left to close
 sideMenu.addEventListener('touchstart', e => startX = e.touches[0].clientX);
 sideMenu.addEventListener('touchmove', e => {
   if (startX - e.touches[0].clientX > 50) closeMenu();
-});
-
-// Open automatically on page load (mobile only)
-window.addEventListener('load', () => {
-  if (window.innerWidth <= 768) {
-    sideMenu.classList.add('active');
-    menuToggle.classList.add('hidden');
-    setTimeout(closeMenu, 2500); // Auto-close after 2.5s
-  }
 });
 </script>
 
