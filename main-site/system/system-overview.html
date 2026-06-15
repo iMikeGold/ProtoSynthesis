@@ -29,25 +29,21 @@
 
   <div class="glow"></div>
 
-  <!-- MOBILE MENU BUTTON -->
-  <div class="menu-toggle" onclick="document.querySelector('.side-menu').classList.toggle('active')">
-    ☰ Menu
-  </div>
+  <div class="menu-toggle" id="menuToggle">☰ Menu</div>
 
   <div class="container">
 
-    <!-- SAME SIDEBAR ON ALL PAGES -->
-    <aside class="side-menu">
+    <aside class="side-menu" id="sideMenu">
       <nav>
         <h4>Navigation</h4>
-        <a href="/">Home</a>
-        <a href="/system/system-overview.html">System Overview</a>
-        <a href="/architecture/architecture-overview.html">Architecture</a>
-        <a href="https://library.protosynthesis.co.uk">Knowledge Library</a>
+        <a href="/" onclick="closeMenu()">Home</a>
+        <a href="/system/system-overview.html" onclick="closeMenu()">System Overview</a>
+        <a href="/architecture/architecture-overview.html" onclick="closeMenu()">Architecture</a>
+        <a href="https://library.protosynthesis.co.uk" onclick="closeMenu()">Knowledge Library</a>
         <div class="divider"></div>
         <h4>Reference</h4>
-        <a href="#applications">Real‑World Use</a>
-        <a href="#media">Media Output</a>
+        <a href="#applications" onclick="closeMenu()">Real‑World Use</a>
+        <a href="#media" onclick="closeMenu()">Media Output</a>
       </nav>
     </aside>
 
@@ -61,43 +57,42 @@
         >
         <h1>System Overview</h1>
 
+        <!-- ✅ DROPDOWN BUTTONS → COMPACT ON MOBILE -->
         <div class="buttons">
           <a class="btn" href="/">Home</a>
-          <a class="btn" href="/system/domains.html">Next: Domains</a>
-          <a class="btn" href="/system/principles.html">Principles</a>
-          <a class="btn" href="/system/vision.html">Vision</a>
-          <a class="btn" href="/architecture/architecture-overview.html">Architecture</a>
+          <div class="dropdown">
+            <a class="btn" href="#">Navigate</a>
+            <div class="dropdown-content">
+              <a href="/system/domains.html">Next: Domains</a>
+              <a href="/system/principles.html">Principles</a>
+              <a href="/system/vision.html">Vision</a>
+              <a href="/architecture/architecture-overview.html">Architecture</a>
+            </div>
+          </div>
         </div>
       </div>
 
       <section class="content">
 
         <h2>Overview</h2>
-
         <p>
           ProtoSynthesis is a systems architecture framework for modelling, connecting, and evolving human systems across multiple domains.
         </p>
-
         <p>
           It defines how knowledge, capability, creativity, economics, governance, and learning structures can be represented within a unified adaptive framework.
         </p>
-
         <p>
           Rather than functioning as a product, service, or organisation, ProtoSynthesis operates as an architectural reference layer from which systems, frameworks, publications, and implementations may emerge.
         </p>
-
         <p>
           The architecture is founded on the principle that meaningful progress occurs through synthesis rather than isolation. Knowledge, education, economics, creativity, and organisational design are not independent systems. They are interconnected components of larger adaptive structures.
         </p>
-
         <p>
           ProtoSynthesis exists to model those relationships, establish coherent frameworks, and provide a foundation for future development across multiple domains.
         </p>
-
         <p>
           As the architecture evolves, new systems, publications, research, standards, and implementations may be added while remaining aligned with the principles defined by the framework.
         </p>
-
       </section>
 
       <footer>
@@ -107,6 +102,35 @@
     </main>
 
   </div>
+
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const sideMenu = document.getElementById('sideMenu');
+let startX = 0;
+
+menuToggle.addEventListener('click', () => {
+  sideMenu.classList.toggle('active');
+  menuToggle.classList.toggle('hidden', sideMenu.classList.contains('active'));
+});
+
+function closeMenu() {
+  sideMenu.classList.remove('active');
+  menuToggle.classList.remove('hidden');
+}
+
+sideMenu.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+sideMenu.addEventListener('touchmove', e => {
+  if (startX - e.touches[0].clientX > 50) closeMenu();
+});
+
+window.addEventListener('load', () => {
+  if (window.innerWidth <= 768) {
+    sideMenu.classList.add('active');
+    menuToggle.classList.add('hidden');
+    setTimeout(closeMenu, 2500);
+  }
+});
+</script>
 
 </body>
 </html>
