@@ -6,7 +6,7 @@
   --muted: #948fb0;            /* Muted purple‑grey */
   
   --accent-synthesis: #7c5cff; /* Purple = Synthesis */
-  --accent-knowledge: #35d6ff;/* Cyan = Knowledge */
+  --accent-knowledge: #35d6ff; /* Cyan = Knowledge */
   --accent-value: #d4af37;     /* Gold = Value */
   --accent-clarity: #ffffff;   /* White/Silver = Clarity */
 
@@ -32,7 +32,7 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   padding: 40px 20px;
-  line-height: 1.8; /* FIX: restores proper line height on all pages */
+  line-height: 1.8;
 }
 
 /* --- LAYOUT --- */
@@ -45,6 +45,7 @@ body {
   z-index: 2;
 }
 
+/* ✅ SIDEBAR — DESKTOP = FIXED / MOBILE = TOGGLE BUTTON */
 .side-menu {
   width: 200px;
   flex-shrink: 0;
@@ -56,6 +57,7 @@ body {
   border-radius: var(--radius);
   padding: 1.2rem;
   backdrop-filter: blur(10px);
+  transition: var(--transition);
 }
 
 .side-menu h4 {
@@ -86,6 +88,22 @@ body {
   height: 1px;
   background: var(--border);
   margin: 1rem 0;
+}
+
+/* ✅ MOBILE MENU TOGGLE */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--fg);
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
 }
 
 .main-content {
@@ -140,14 +158,12 @@ h1 {
   background: var(--surface);
 }
 
-/* Standard buttons = Purple hover */
 .btn:hover {
   border-color: var(--accent-synthesis);
   box-shadow: 0 0 20px rgba(124, 92, 255, 0.25);
   transform: translateY(-2px);
 }
 
-/* Library button = Cyan/Green highlight ALWAYS (as you asked) */
 .btn-knowledge {
   border-color: rgba(53,214,255,0.35);
   background: rgba(53,214,255,0.08);
@@ -172,8 +188,7 @@ h1 {
 }
 
 /* --- ✅ CONTENT BLOCKS — STANDARD FOR ALL PAGES --- */
-/* This is the box style you wanted — ALL pages now use this */
-.content-block {
+.content-block, .content {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -185,8 +200,14 @@ h1 {
   overflow: hidden;
 }
 
+/* ✅ PRESERVE BOLD / STRONG FORMATTING */
+.content-block strong, .content strong,
+.content-block b, .content b {
+  color: var(--accent-clarity);
+  font-weight: 600;
+}
+
 /* LEFT GLOW / ACCENT BORDERS — PER COLOUR PURPOSE */
-/* Synthesis = Purple */
 .accent-synthesis {
   border-left: 3px solid var(--accent-synthesis);
   box-shadow: inset 8px 0 12px -8px rgba(124, 92, 255, 0.2);
@@ -197,7 +218,6 @@ h1 {
   background: rgba(124, 92, 255, 0.04);
 }
 
-/* Knowledge = Cyan */
 .accent-knowledge {
   border-left: 3px solid var(--accent-knowledge);
   box-shadow: inset 8px 0 12px -8px rgba(53, 214, 255, 0.2);
@@ -208,7 +228,6 @@ h1 {
   background: rgba(53, 214, 255, 0.04);
 }
 
-/* Value = Gold */
 .accent-value {
   border-left: 3px solid var(--accent-value);
   box-shadow: inset 8px 0 12px -8px rgba(212, 175, 55, 0.2);
@@ -219,7 +238,6 @@ h1 {
   background: rgba(212, 175, 55, 0.04);
 }
 
-/* ✅ Clarity = White/Silver (fixed for Reference Layer) */
 .accent-clarity {
   border-left: 3px solid var(--accent-clarity);
   box-shadow: inset 8px 0 12px -8px rgba(255, 255, 255, 0.25);
@@ -231,22 +249,22 @@ h1 {
 }
 
 /* Text styles inside blocks */
-.content-block h2 {
+.content-block h2, .content h2 {
   color: var(--accent-clarity);
   margin-bottom: 1rem;
   font-size: 1.3rem;
 }
-.content-block h3 {
+.content-block h3, .content h3 {
   color: #ffffff;
   margin: 1.5rem 0 0.8rem;
   font-size: 1.1rem;
 }
-.content-block p,
-.content-block li {
+.content-block p, .content-block li,
+.content p, .content li {
   color: #c9c6d8;
   margin-bottom: 0.8rem;
 }
-.content-block ul {
+.content-block ul, .content ul {
   padding-left: 1.2rem;
 }
 
@@ -266,23 +284,19 @@ h1 {
   transition: var(--transition);
   font-size: 0.9rem;
 }
-/* Default link hover = Cyan (Knowledge) */
 .item-link:hover {
   color: var(--accent-knowledge);
   background: rgba(53,214,255,0.06);
   padding-left: 1rem;
 }
-/* If inside synthesis block = Purple hover */
 .accent-synthesis .item-link:hover {
   color: var(--accent-synthesis);
   background: rgba(124,92,255,0.06);
 }
-/* If inside value block = Gold hover */
 .accent-value .item-link:hover {
   color: var(--accent-value);
   background: rgba(212,175,55,0.06);
 }
-/* If inside clarity block = White/Silver hover */
 .accent-clarity .item-link:hover {
   color: var(--accent-clarity);
   background: rgba(255,255,255,0.06);
@@ -333,15 +347,25 @@ footer {
   100% { opacity: 0.7; transform: scale(1.1); }
 }
 
-/* --- RESPONSIVE --- */
+/* --- ✅ RESPONSIVE FIXES --- */
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
+  .menu-toggle {
+    display: block;
   }
   .side-menu {
-    width: 100%;
-    position: static;
-    margin-bottom: 2rem;
+    position: fixed;
+    top: 0;
+    left: -220px;
+    height: 100vh;
+    margin: 0;
+    z-index: 1050;
+  }
+  .side-menu.active {
+    left: 0;
+  }
+  .container {
+    flex-direction: column;
+    padding-top: 40px;
   }
   .link-grid {
     grid-template-columns: 1fr;
@@ -351,7 +375,6 @@ footer {
 /* =========================
    ARCHITECTURE SIDEBAR
    ========================= */
-
 .arch-sidebar {
   position: fixed;
   top: 0;
