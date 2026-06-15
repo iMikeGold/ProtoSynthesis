@@ -29,6 +29,21 @@
 
   <div class="glow"></div>
 
+  <!-- SIDEBAR — SAME AS SYSTEM OVERVIEW -->
+    <aside class="side-menu" id="sideMenu">
+      <nav>
+        <h4>Navigation</h4>
+        <a href="/" onclick="closeMenu()">Home</a>
+        <a href="/system/system-overview.html" onclick="closeMenu()">System Overview</a>
+        <a href="/architecture/architecture-overview.html" onclick="closeMenu()">Architecture</a>
+        <a href="https://library.protosynthesis.co.uk" onclick="closeMenu()">Knowledge Library</a>
+        <div class="divider"></div>
+        <h4>Reference</h4>
+        <a href="#applications" onclick="closeMenu()">Real‑World Use</a>
+        <a href="#media" onclick="closeMenu()">Media Output</a>
+      </nav>
+    </aside>
+  
   <div class="container">
 
     <div class="center">
@@ -89,10 +104,28 @@
     </section>
 
     <footer>
-      © ProtoSynthesis 2026–Present · Built as a living system
+      © ProtoSynthesis 2026 · Built as a living system
     </footer>
 
   </div>
 
+  <!-- SAME SCRIPT AS SYSTEM OVERVIEW -->
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const sideMenu = document.getElementById('sideMenu');
+let startX = 0;
+
+menuToggle.addEventListener('click', () => sideMenu.classList.toggle('active'));
+
+function closeMenu() {
+  sideMenu.classList.remove('active');
+}
+
+sideMenu.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+sideMenu.addEventListener('touchmove', e => {
+  if (startX - e.touches[0].clientX > 50) closeMenu();
+});
+</script>
+  
 </body>
 </html>
