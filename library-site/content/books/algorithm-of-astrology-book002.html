@@ -23,46 +23,126 @@
   
   <link rel="stylesheet" href="/styles/library.css">
   <style>
+    /* ✅ IMPROVED READABILITY — KEEPING YOUR COLOURS & STRUCTURE */
     .proto-quote {
       font-style: italic;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       text-align: center;
-      margin: 1.5rem 0;
-      color: #444;
-      padding: 1rem;
-      border-left: 4px solid #888;
-      background: #f9f9f9;
+      margin: 2rem auto;
+      color: #e2e8f0;
+      padding: 1.5rem 2rem;
+      border-left: 4px solid var(--accent);
+      background: rgba(53, 214, 255, 0.06);
+      border-radius: var(--radius-sm);
+      max-width: 750px;
+      line-height: 1.7;
     }
     .subsection {
-      margin: 2rem 0;
+      margin: 2.5rem 0;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+    }
+    .subsection h2 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: #ffffff;
+      font-size: 1.4rem;
+      border-bottom: 1px solid var(--accent-soft);
+      padding-bottom: 0.3rem;
     }
     .subsection h3 {
-      margin-top: 1.5rem;
-      color: #444;
+      margin-top: 1.8rem;
+      margin-bottom: 0.8rem;
+      color: #ffffff;
+      font-size: 1.15rem;
     }
     .note-block {
-      background: #009fcb;
-      border-left: 4px solid #333;
-      padding: 1rem;
-      margin: 1rem 0;
+      background: rgba(0, 159, 203, 0.12);
+      border-left: 4px solid var(--accent);
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: var(--radius-sm);
+      color: #e2e8f0;
     }
-    ul {
-      line-height: 1.6;
+    ul, ol {
+      line-height: 1.8;
+      margin: 1rem 0 1rem 1.5rem;
+      color: var(--muted);
+    }
+    ul ul, ol ul {
+      margin: 0.5rem 0 0.5rem 1.2rem;
+    }
+    p {
+      line-height: 1.85;
+      margin-bottom: 1.2rem;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+    }
+    strong {
+      color: #ffffff;
+      font-weight: 600;
+    }
+    em {
+      color: #e2e8f0;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.5rem 0;
     }
     .cta-section {
       text-align: center;
       margin: 3rem 0 2rem;
-      padding: 2rem;
-      background: #111827;
-      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      background: rgba(17, 24, 39, 0.6);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+    }
+    .cta-section h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      color: var(--muted);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .cta-section .buttons {
       margin-top: 1.5rem;
+    }
+    /* ✅ Better heading hierarchy */
+    .section > h1 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .section > h2 {
+      font-size: 1.5rem;
+      color: var(--accent);
+      margin: 2rem 0 1rem;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid var(--accent-soft);
+    }
+    /* ✅ Responsive tweaks */
+    @media (max-width: 768px) {
+      .subsection {
+        padding: 1rem;
+      }
+      .proto-quote {
+        padding: 1rem;
+        font-size: 1.05rem;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="glow"></div>
   <div class="container">
 
     <!-- LOGO -->
@@ -326,7 +406,7 @@
 
     <!-- FOOTER -->
     <footer>
-      © ProtoSynthesis 2026–Present · Algorithm of Astrology · Book 002 · L3 Knowledge Layer
+      © ProtoSynthesis 2026 · Algorithm of Astrology · Book 002 · L3 Knowledge Layer
     </footer>
 
   </div>
