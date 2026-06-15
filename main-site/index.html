@@ -29,24 +29,23 @@
 
   <div class="glow"></div>
 
-  <!-- MOBILE MENU BUTTON -->
-  <div class="menu-toggle" onclick="document.querySelector('.side-menu').classList.toggle('active')">
-    ☰ Menu
-  </div>
+  <!-- ✅ MENU BUTTON → HIDES WHEN OPEN, SHOWS WHEN CLOSED -->
+  <div class="menu-toggle" id="menuToggle">☰ Menu</div>
 
   <div class="container">
 
-    <!-- SIDE MENU - READY FOR FUTURE EXPANSION -->
-    <aside class="side-menu">
+    <!-- ✅ SIDEBAR — CLOSES ON CLICK + SWIPE SUPPORT -->
+    <aside class="side-menu" id="sideMenu">
       <nav>
         <h4>Navigation</h4>
-        <a href="/system/system-overview.html">System Overview</a>
-        <a href="/architecture/architecture-overview.html">Architecture</a>
-        <a href="https://library.protosynthesis.co.uk">Knowledge Library</a>
+        <a href="/" onclick="closeMenu()">Home</a>
+        <a href="/system/system-overview.html" onclick="closeMenu()">System Overview</a>
+        <a href="/architecture/architecture-overview.html" onclick="closeMenu()">Architecture</a>
+        <a href="https://library.protosynthesis.co.uk" onclick="closeMenu()">Knowledge Library</a>
         <div class="divider"></div>
         <h4>Reference</h4>
-        <a href="#applications">Real‑World Use</a>
-        <a href="#media">Media Output</a>
+        <a href="#applications" onclick="closeMenu()">Real‑World Use</a>
+        <a href="#media" onclick="closeMenu()">Media Output</a>
       </nav>
     </aside>
 
@@ -105,7 +104,6 @@
       </section>
 
 
-      <!-- NEW SECTION: LATEST FROM LIBRARY -->
       <section class="content-block accent-knowledge">
         <h2>📚 Latest From The Knowledge Library</h2>
         <p>Recent publications and core documents — built from the framework below.</p>
@@ -121,7 +119,6 @@
       </section>
 
 
-      <!-- NEW SECTION: LATEST NEWS / UPDATES -->
       <section class="content-block accent-synthesis">
         <h2>📡 System Updates & News</h2>
         <div class="update-item">
@@ -139,7 +136,6 @@
       </section>
 
 
-      <!-- NEW SECTION: MEDIA / OUTPUT LAYER -->
       <section id="media" class="content-block accent-value">
         <h2>🎬 Media & Creative Output</h2>
         <p>Real‑world implementation and creative expression of the framework — hosted under <strong>@protosynthesismedia</strong></p>
@@ -151,7 +147,6 @@
       </section>
 
 
-        <!-- REFERENCE LAYER — NOW HAS WHITE/SILVER GLOW -->
       <section id="applications" class="content-block accent-clarity">
         <h2>🔬 Reference Layer & Applications</h2>
         <p>How this architecture is applied across domains — the bridge between theory and function.</p>
@@ -171,6 +166,40 @@
     </main>
 
   </div>
+
+<!-- ✅ JAVASCRIPT: CLOSE ON CLICK + SWIPE GESTURE -->
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const sideMenu = document.getElementById('sideMenu');
+let startX = 0;
+
+// Toggle open/close
+menuToggle.addEventListener('click', () => {
+  sideMenu.classList.toggle('active');
+  menuToggle.classList.toggle('hidden', sideMenu.classList.contains('active'));
+});
+
+// Close when clicking any link
+function closeMenu() {
+  sideMenu.classList.remove('active');
+  menuToggle.classList.remove('hidden');
+}
+
+// Swipe to close
+sideMenu.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+sideMenu.addEventListener('touchmove', e => {
+  if (startX - e.touches[0].clientX > 50) closeMenu();
+});
+
+// Open automatically on page load (mobile only)
+window.addEventListener('load', () => {
+  if (window.innerWidth <= 768) {
+    sideMenu.classList.add('active');
+    menuToggle.classList.add('hidden');
+    setTimeout(closeMenu, 2500); // Auto-close after 2.5s
+  }
+});
+</script>
 
 </body>
 </html>
