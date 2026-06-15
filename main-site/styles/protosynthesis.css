@@ -45,9 +45,9 @@ body {
   z-index: 2;
 }
 
-/* ✅ SIDEBAR — DESKTOP = FIXED / MOBILE = TOGGLE BUTTON */
+/* ✅ SIDEBAR — DESKTOP = FIXED / MOBILE = SLIDE FROM LEFT */
 .side-menu {
-  width: 200px;
+  width: 220px;
   flex-shrink: 0;
   position: sticky;
   top: 40px;
@@ -57,7 +57,7 @@ body {
   border-radius: var(--radius);
   padding: 1.2rem;
   backdrop-filter: blur(10px);
-  transition: var(--transition);
+  transition: transform var(--transition);
 }
 
 .side-menu h4 {
@@ -90,12 +90,12 @@ body {
   margin: 1rem 0;
 }
 
-/* ✅ MOBILE MENU TOGGLE */
+/* ✅ MENU BUTTON — NOW TOP RIGHT */
 .menu-toggle {
   display: none;
   position: fixed;
   top: 20px;
-  left: 20px;
+  right: 20px; /* <-- MOVED TO RIGHT */
   z-index: 1100;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -104,6 +104,26 @@ body {
   border-radius: var(--radius);
   backdrop-filter: blur(10px);
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    margin: 0;
+    z-index: 1050;
+    transform: translateX(-100%);
+    border-radius: 0;
+    width: 220px;
+  }
+  .side-menu.active { transform: translateX(0); }
+  .container {
+    flex-direction: column;
+    padding-top: 40px;
+  }
 }
 
 .main-content {
@@ -139,7 +159,7 @@ h1 {
   margin: 0 auto 35px;
 }
 
-/* --- BUTTONS — COLOUR MATCHING RULES --- */
+/* --- BUTTONS --- */
 .buttons {
   display: flex;
   gap: 15px;
@@ -187,7 +207,7 @@ h1 {
   border-bottom: 1px solid var(--accent-synthesis);
 }
 
-/* --- ✅ CONTENT BLOCKS — STANDARD FOR ALL PAGES --- */
+/* --- CONTENT BLOCKS --- */
 .content-block, .content {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -200,14 +220,12 @@ h1 {
   overflow: hidden;
 }
 
-/* ✅ PRESERVE BOLD / STRONG FORMATTING */
 .content-block strong, .content strong,
 .content-block b, .content b {
   color: var(--accent-clarity);
   font-weight: 600;
 }
 
-/* LEFT GLOW / ACCENT BORDERS — PER COLOUR PURPOSE */
 .accent-synthesis {
   border-left: 3px solid var(--accent-synthesis);
   box-shadow: inset 8px 0 12px -8px rgba(124, 92, 255, 0.2);
@@ -248,7 +266,6 @@ h1 {
   background: rgba(255, 255, 255, 0.04);
 }
 
-/* Text styles inside blocks */
 .content-block h2, .content h2 {
   color: var(--accent-clarity);
   margin-bottom: 1rem;
@@ -268,7 +285,7 @@ h1 {
   padding-left: 1.2rem;
 }
 
-/* --- GRID LINKS — HOVER MATCHES COLOUR --- */
+/* --- GRID LINKS --- */
 .link-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -345,31 +362,6 @@ footer {
 @keyframes pulse {
   0% { opacity: 0.4; transform: scale(1); }
   100% { opacity: 0.7; transform: scale(1.1); }
-}
-
-/* --- ✅ RESPONSIVE FIXES --- */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-  .side-menu {
-    position: fixed;
-    top: 0;
-    left: -220px;
-    height: 100vh;
-    margin: 0;
-    z-index: 1050;
-  }
-  .side-menu.active {
-    left: 0;
-  }
-  .container {
-    flex-direction: column;
-    padding-top: 40px;
-  }
-  .link-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* =========================
