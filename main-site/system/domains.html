@@ -29,6 +29,28 @@
 
   <div class="glow"></div>
 
+    <!-- MOBILE MENU BUTTON -->
+  <div class="menu-toggle" onclick="document.querySelector('.side-menu').classList.toggle('active')">
+    ☰ Menu
+  </div>
+
+  <div class="container">
+
+    <!-- SAME SIDEBAR ON ALL PAGES -->
+    <aside class="side-menu">
+      <nav>
+        <h4>Navigation</h4>
+        <a href="/">Home</a>
+        <a href="/system/system-overview.html">System Overview</a>
+        <a href="/architecture/architecture-overview.html">Architecture</a>
+        <a href="https://library.protosynthesis.co.uk">Knowledge Library</a>
+        <div class="divider"></div>
+        <h4>Reference</h4>
+        <a href="#applications">Real‑World Use</a>
+        <a href="#media">Media Output</a>
+      </nav>
+    </aside>
+    
   <div class="container">
 
     <div class="center">
@@ -102,10 +124,33 @@
     </section>
 
     <footer>
-      © ProtoSynthesis 2026–Present · Built as a living system
-    </footer>
+        © ProtoSynthesis 2026–Present · Organisational Layer · Built as a living system
+      </footer>
+
+    </main>
 
   </div>
+
+<!-- FIXED SCRIPT — NO GLITCHES, NO AUTO-OPEN -->
+<script>
+const menuToggle = document.getElementById('menuToggle');
+const sideMenu = document.getElementById('sideMenu');
+let startX = 0;
+
+// Toggle open/close
+menuToggle.addEventListener('click', () => sideMenu.classList.toggle('active'));
+
+// Close when clicking any link
+function closeMenu() {
+  sideMenu.classList.remove('active');
+}
+
+// Swipe left to close
+sideMenu.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+sideMenu.addEventListener('touchmove', e => {
+  if (startX - e.touches[0].clientX > 50) closeMenu();
+});
+</script>
 
 </body>
 </html>
