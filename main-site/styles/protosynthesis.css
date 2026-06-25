@@ -45,7 +45,7 @@ body {
   z-index: 2;
 }
 
-/* ✅ SIDEBAR — DESKTOP = FIXED / MOBILE = SLIDE FROM LEFT */
+/* SIDEBAR — DESKTOP = FIXED / MOBILE = SLIDE FROM LEFT */
 .side-menu {
   width: 220px;
   flex-shrink: 0;
@@ -90,7 +90,7 @@ body {
   margin: 1rem 0;
 }
 
-/* ✅ MENU BUTTON — NOW TOP RIGHT */
+/* MENU BUTTON — NOW TOP RIGHT */
 .menu-toggle {
   display: none;
   position: fixed;
