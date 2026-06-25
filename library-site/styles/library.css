@@ -2,7 +2,7 @@
 
   /* =====================================
      PROTOSYNTHESIS LIBRARY DESIGN SYSTEM
-     v1.1
+     v1.2 — UPDATED: Added dashboard cards, media highlight, footer links
   ===================================== */
 
   /* Foundation */
@@ -517,4 +517,173 @@ footer {
 
     text-align: center;
   }
+}
+
+/* =====================================
+   NEW ADDITIONS — v1.2 ONLY
+===================================== */
+
+/* Dashboard Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-card:hover {
+  border-color: #d4af37;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
+  transform: translateY(-2px);
+}
+
+.dashboard-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+.dashboard-card.gold::before {
+  background: linear-gradient(to bottom, #d4af37, transparent);
+}
+
+.dashboard-card.white::before {
+  background: linear-gradient(to bottom, #f8fbff, transparent);
+}
+
+.dashboard-card.gold-highlight::before {
+  background: linear-gradient(to bottom, #d4af37, transparent);
+}
+
+.dashboard-card.gold-highlight {
+  border-color: rgba(212, 175, 55, 0.25);
+}
+
+.dashboard-card.gold-highlight:hover {
+  border-color: #d4af37;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+.dashboard-card h3 {
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.dashboard-card p {
+  color: #b8b8b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Highlight Box */
+.highlight-box {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.highlight-box h3 {
+  color: #d4af37;
+  margin-top: 0;
+}
+
+/* Reading List */
+.reading-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.reading-list li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: #e0e0e0;
+}
+
+.reading-list li:last-child {
+  border-bottom: none;
+}
+
+/* Text Links */
+.text-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.text-link:hover {
+  color: #d4af37;
+  text-decoration: underline;
+}
+
+/* Archive Entries */
+.archive-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.archive-date {
+  color: #d4af37;
+  font-size: 0.85rem;
+}
+
+.archive-title {
+  color: #ffffff;
+}
+
+/* Footer Colored Links */
+footer a {
+  text-decoration: none;
+  margin: 0 8px;
+  transition: var(--transition);
+}
+
+footer a.media {
+  color: #d4af37;
+}
+
+footer a.media:hover {
+  color: #f8e8a0;
+  text-shadow: 0 0 8px rgba(212,175,55,0.4);
+}
+
+footer a.library {
+  color: var(--accent);
+}
+
+footer a.library:hover {
+  color: #80e7ff;
+  text-shadow: 0 0 8px rgba(53,214,255,0.4);
+}
+
+footer a.protosynthesis {
+  color: #7c5cff;
+}
+
+footer a.protosynthesis:hover {
+  color: #b09dff;
+  text-shadow: 0 0 8px rgba(124,92,255,0.4);
 }

@@ -4,202 +4,53 @@
   <meta charset="utf-8">
   <title>ProtoSynthesis Library</title>
 
-<link rel="apple-touch-icon"
-      sizes="180x180"
-      href="/assets/favicon/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
 
-<link rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/assets/favicon/favicon-32x32.png">
-
-<link rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/assets/favicon/favicon-16x16.png">
-
-<link rel="manifest"
-      href="/assets/favicon/site.webmanifest">
-  
-  <link rel="stylesheet" href="/styles/library.css">
-  <style>
-        /* --------------------------
-    LIBRARY DASHBOARD EXTENSIONS
-    -------------------------- */
-    .dashboard-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-      margin: 2.5rem 0;
-    }
-
-    .dashboard-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      transition: var(--transition);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .dashboard-card:hover {
-      border-color: #d4af37; /* Gold border on hover */
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.15);
-      transform: translateY(-2px);
-    }
-
-    .dashboard-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-    }
-
-    .dashboard-card.gold::before {
-      background: linear-gradient(to bottom, #d4af37, transparent);
-    }
-
-    .dashboard-card.white::before {
-      background: linear-gradient(to bottom, #f8fbff, transparent);
-    }
-
-    .dashboard-card h3 {
-      color: #ffffff;
-      margin-bottom: 0.8rem;
-      font-size: 1.1rem;
-    }
-
-    .dashboard-card p {
-      color: #b8b8b8; /* Soft grey text */
-      font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 0;
-    }
-
-    /* --- HIGHLIGHT BOX — CHANGED TO GOLD THEME --- */
-    .highlight-box {
-      background: rgba(212, 175, 55, 0.08); /* Soft gold background */
-      border: 1px solid rgba(212, 175, 55, 0.2);
-      border-radius: var(--radius-md);
-      padding: 1.5rem;
-      margin: 2rem 0;
-      text-align: center;
-    }
-
-    .highlight-box h3 {
-      color: #d4af37; /* Gold heading */
-      margin-top: 0;
-    }
-
-    .reading-list {
-      list-style: none;
-      padding: 0;
-      margin: 1rem 0 0 0;
-    }
-
-    .reading-list li {
-      padding: 0.4rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      color: #e0e0e0;
-    }
-
-    .reading-list li:last-child {
-      border-bottom: none;
-    }
-
-    /* --- LINK STYLES — NEW COLOURS --- */
-    .text-link {
-      color: #e0e0e0; /* Light silver/grey default */
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-    .text-link:hover {
-      color: #d4af37; /* Gold on hover */
-      text-decoration: underline;
-    }
-
-    .archive-entry {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.5rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-
-    .archive-date {
-      color: #d4af37; /* Gold date text */
-      font-size: 0.85rem;
-    }
-
-    .archive-title {
-      color: #ffffff;
-    }
-
-    @media (max-width: 768px) {
-      .dashboard-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <!-- Only centralised stylesheet -->
+  <link rel="stylesheet" href="styles/library.css">
 </head>
 
 <body>
-
   <div class="container">
 
-    <!-- LOGO (RESTORED - IMPORTANT IDENTITY ANCHOR) -->
+    <!-- Logo & Header -->
     <div class="center">
-
       <img
         class="logo"
-        src="/assets/images/ProtoSynthesis 7Dot Logo Only Main ProtoGlyph Design 2.2.png"
+        src="assets/images/ProtoSynthesis 7Dot Logo Only Main ProtoGlyph Design 2.2.png"
         alt="ProtoSynthesis Logo"
       >
-
       <h1>ProtoSynthesis Library</h1>
-
       <div class="subtitle">
         Structured information repository · Infinite knowledge hub · Living archive
       </div>
-
     </div>
 
-    <!-- NAVIGATION -->
+    <!-- Navigation -->
     <div class="buttons">
-
       <a class="btn" href="https://protosynthesis.co.uk">Home</a>
-      
-      <a class="btn" href="#" style="opacity:0.6; pointer-events:none;">
-        Library
-      </a>
-
+      <a class="btn" href="#" style="opacity:0.6; pointer-events:none;">Library</a>
     </div>
 
-
-    <!-- ✅ NEW LIBRARY DASHBOARD / TOP LAYER -->
+    <!-- Overview & Dashboard -->
     <section class="section">
       <h2>Library Overview & Mission</h2>
-
       <p>
         The ProtoSynthesis Library is the structured knowledge repository within the wider ProtoSynthesis architecture — a permanent, growing archive designed to preserve, organise, and connect every piece of knowledge produced within the system.
       </p>
       <p>
-        It provides organised access to books, articles, whitepapers, research materials, historical records, and knowledge artefacts — all indexed through a unified registry system. <em>The Architecture defines systems and structural rules; the Library contains the knowledge produced, discovered, and preserved within those systems.</em>
+        It provides organised access to books, articles, whitepapers, research materials, and reference documents — all indexed through a unified registry system. <em>The Architecture defines systems and structural rules; the Library contains the knowledge produced, discovered, and preserved within those systems.</em>
       </p>
 
-      <!-- DASHBOARD GRID -->
       <div class="dashboard-grid">
 
-                <!-- READING LIST -->
+        <!-- Monthly Reading -->
         <div class="dashboard-card white">
           <h3>📖 Monthly Reading & Recommendations</h3>
-          <p>
-            Curated selections, essential texts, and suggested pathways through the library — updated monthly to guide exploration and deeper study.
-          </p>
+          <p>Curated selections, essential texts, and suggested pathways through the library — updated monthly.</p>
           <ul class="reading-list">
             <li>• <a href="/content/ebooks/celestial-source-code-ebook001.html" class="text-link">Astrology Algorithm: Source Code</a></li>
             <li>• <a href="/content/books/battle-books-of-art-book004.html" class="text-link">Battle Books of Art: Entering the Zone</a></li>
@@ -208,12 +59,16 @@
           </ul>
         </div>
 
-                <!-- KNOWLEDGE ARCHIVES -->
+        <!-- Research Archives -->
         <div class="dashboard-card gold">
           <h3>📜 Research & Historical Archives</h3>
-          <p>
-            Permanent records of research, source materials, historical context, and reference documents. This section preserves the background, evolution, and lineage of every concept in the Algorithm of Everything.
-          </p>
+          <p>Permanent records of research, source materials, and historical context.</p>
+
+          <div class="archive-entry">
+            <span class="archive-title">ProtoSynthesis Media Site Launch</span>
+            <span class="archive-date">2026‑06‑25</span>
+          </div>
+
           <div class="archive-entry">
             <span class="archive-title">Codex Preservation Protocol</span>
             <span class="archive-date">2026‑06‑12</span>
@@ -224,12 +79,10 @@
           </div>
         </div>
 
-             <!-- KNOWLEDGE TIMELINE -->
+        <!-- Timeline & Changelog -->
         <div class="dashboard-card">
           <h3>🗓️ Knowledge Timeline & Changelog</h3>
-          <p>
-            Track how the library grows, evolves, and expands. See new additions, revisions, and the history of how knowledge has been refined and synthesised over time.
-          </p>
+          <p>Track updates, revisions, and growth of the library.</p>
           <div class="archive-entry">
             <span class="archive-title">eBook Structure Update</span>
             <span class="archive-date">2026‑06‑10</span>
@@ -239,34 +92,42 @@
             <span class="archive-date">2026‑06‑05</span>
           </div>
         </div>
-        
+
+        <!-- NEW: Media Portal -->
+        <div class="dashboard-card gold-highlight">
+          <h3>🎬 ProtoSynthesis Media</h3>
+          <p>Visit the documentary and creative production portal — cinematic explorations, field notes, and systems analysis.</p>
+          <div style="margin-top: 1rem;">
+            <a href="https://media.protosynthesis.co.uk" class="text-link" target="_blank" rel="noopener noreferrer">
+              → Open Media Portal
+            </a>
+          </div>
+        </div>
+
       </div>
 
-      <!-- FUTURE VISION -->
       <div class="highlight-box">
         <h3>Growing Into a Living Knowledge Hub 🎋</h3>
         <p>
-          This library is designed to expand infinitely. In future phases, it will become a fully interactive wiki‑forum — allowing registered users to contribute, discuss, link nodes, and build concepts upon the collective knowledge of the World's systems.
+          This library is designed to expand infinitely. In future phases, it will become a fully interactive wiki‑forum — allowing registered users to contribute, discuss, link nodes, and build upon the collective knowledge.
         </p>
       </div>
-
     </section>
 
-
-    <!-- ✅ ORIGINAL REGISTRY SECTION (UNCHANGED) -->
+    <!-- Knowledge Registry -->
     <section class="section">
       <h2>Knowledge Registry</h2>
-      <p>
-        Below is the active index of all published works, organised by type and category.
-      </p>
+      <p>Below is the active index of all published works, organised by type and category.</p>
     </section>
 
-    <!-- REGISTRY -->
     <div id="content"></div>
 
-    <!-- FOOTER -->
+    <!-- Footer with colour-coded links -->
     <footer>
-      © ProtoSynthesis 2026 · Library Knowledge Registry · L3 Knowledge Layer
+      
+      <a href="https://media.protosynthesis.co.uk" class="media">Media</a>·
+      <a href="index.html" class="library">Library</a>Knowledge Registry
+      <a href="https://protosynthesis.co.uk" class="protosynthesis">ProtoSynthesis</a>© 2026
     </footer>
 
   </div>
@@ -276,14 +137,12 @@
       try {
         const res = await fetch('/registry/registry.json');
         const data = await res.json();
-
         const container = document.getElementById('content');
         const library = data.library.content;
 
         function renderSection(title, items) {
           const section = document.createElement('div');
           section.className = 'section';
-
           const h2 = document.createElement('h2');
           h2.textContent = title;
           section.appendChild(h2);
@@ -295,30 +154,17 @@
             section.appendChild(empty);
           } else {
             items.forEach(item => {
-
-              if (item.visibility === "hidden") {
-                return;
-              }
-            
+              if (item.visibility === "hidden") return;
               const div = document.createElement('div');
-            
               div.className = 'item';
-            
               div.innerHTML = `
-                <strong>
-                  <a class="item-link" href="${item.path}">
-                    ${item.title}
-                  </a>
-                </strong>
+                <strong><a class="item-link" href="${item.path}">${item.title}</a></strong>
                 <small>${item.id}</small>
                 <small>${item.path}</small>
               `;
-            
               section.appendChild(div);
-            
             });
           }
-
           container.appendChild(section);
         }
 
@@ -326,15 +172,11 @@
         renderSection('Whitepapers', library.whitepapers);
         renderSection('eBooks', library.ebooks);
         renderSection('Books', library.books);
-        
-        
-
       } catch (err) {
         document.getElementById('content').innerHTML =
           '<p>Registry not found or failed to load.</p>';
       }
     }
-
     loadRegistry();
   </script>
 
